@@ -1,0 +1,121 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+int     wgetint(win, incoming, min, max, base, lastkey)
+win_t   *win;
+int     incoming, min, max, base, *lastkey;
+
+short   wgetshort(win, incoming, min, max, base, lastkey)
+win_t   *win;
+int     incoming, min, max, base, *lastkey;
+
+long    wgetlong(win, incoming, min, max, base, lastkey)
+win_t   *win;
+long    incoming, min, max;
+int     base, *lastkey;
+
+.fi
+.SH DESCRIPTION
+
+These three functions exhibit identical behavior.  In the text
+below, wgetint() may also refer to wgetshort() or wgetlong().
+
+The
+.B wgetint()
+function inputs an integer through the window specified by win.
+
+The programmer can specify both minimum and maximum values.
+If the value entered is less than
+.B min,
+wgetint() will return min, and if it is less than
+.B max,
+wgetint() will return max.
+
+.cu
+PARAMETERS:
+
+.B win
+is the window in which the value is entered.
+
+.B incoming
+is the default value of the number.  This value will be displayed
+in the window when wgetint() is called.  If the first key pressed during
+input is an input-terminator, (see
+.B screen_input(3))
+then wgetint() will return the incoming value.
+
+.B min
+specifies the smallest value that wgetint() will return.  If a smaller
+number is entered, wgetint() will return
+.B min
+instead.
+
+.B max
+specifies the largest value that wgetint() will return.  If a larger
+number is entered, wgetint() will return
+.B max
+instead.
+
+.B base
+is the base the number should be entered in.  The legal range of
+.B base
+is determined by the limits of the
+.B strtol()
+function, and is usually 2 to 36.  If the base is 0, the value may be
+entered in decimal, octal, or hexadecimal in accordance with
+strtol() and C language conventions.
+
+.B lastkey
+should receive the address of an integer, into which wgetint()
+will place the key code of the input terminating key.
+(See screen_input() for information on terminating keys)
+    
+.SH RETURN\ VALUE
+
+.B wgetint() returns the value entered if it is between min
+and max.  If less than min, wgetint() returns min.  If greater than
+max, wgetint() returns max.
+
+.SH PITFALLS
+
+Be sure to use the apropriate function for your program's needs.
+The short and int types should both be regarded as 16 bit integers
+where range is concerned. (-32768 to +32767)
+
+Using short may cause performance-degrading promotions to occur.
+
+Similarly, using long may require performance-degrading
+multiple precision arithmetic at the machine level, but
+will provide 32-bit integer range. (+/- 4.3 billion)
+
+.SH EXAMPLE
+
+.nf
+    int     main()
+    
+    {
+        win_t   *win;
+        int     age, default_age = 0, min_age = 0, max_age = 120,
+                last_key;
+        ...
+        wputs(win,"Enter your age: ");
+        age = wgetint(win,default_age,min_age,max_age,10,&last_key);
+        ...
+    }
+.fi 
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

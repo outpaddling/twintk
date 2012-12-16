@@ -1,0 +1,17 @@
+#!/bin/csh
+
+foreach file (*.3)
+    if ( ! -e Done/$file ) then
+        ape $file
+        echo -n 'Done with this page? (y/n/q) '
+        set junk = `line`
+        if ( $junk == 'y' ) then
+            mv $file Done
+        else 
+            if ( $junk == 'q' ) then
+                exit 0
+            endif
+        endif
+    endif
+end
+

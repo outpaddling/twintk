@@ -1,0 +1,8 @@
+
+
+	Direct screen control
+	Buffered (window) control
+	Simultaneous screen and buffer update
+	Maximum use of terminal capabilities
+	Buffer size may be larger than screen
+	Buffer viewable in any size window (portion of screen)

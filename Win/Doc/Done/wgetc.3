@@ -1,0 +1,67 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+int     wgetc(win)
+win_t  *win;
+
+.fi
+.SH DESCRIPTION
+
+The
+.B wgetc()
+function inputs a single character from the standard input.
+
+The behavior of wgetc() is affected by the current tty mode (see
+.B tset_tty()).
+
+If
+.B ECHO
+is on, the character input will automatically be displayed in
+.B win
+using wputc().
+
+If
+.B ICANON
+is off, wgetc() will respond immediately to any keyboard input.
+If ICANON is on, Unix will buffer the characters until a newline
+is entered before wgetc() is allowed to receive input.
+
+.cu
+PARAMETERS:
+
+.SH RETURN\ VALUE
+
+.B wgetc()
+returns the character which was read.
+
+.SH PITFALLS
+
+Make sure the tty modes are set appropriately, or wgetc() may
+not behave the way you expect.
+
+.SH EXAMPLE
+
+.nf
+    win_t   *win;
+    int     ch;
+    
+    ...
+    
+    ch = wgetc(win);
+.fi
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

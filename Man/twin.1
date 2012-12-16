@@ -1,0 +1,220 @@
+.TH Twin
+.SH NAME
+.PP
+Twin - Terminal independent text windows library
+.SH SYNOPSIS
+#include <windows.h> or #include <direct.h>
+
+cc prog.c -ltwin
+
+.SH DESCRIPTION
+
+Twin is a terminal independent text library for ascii terminals.
+It is intended as a substitute for curses(tm), but with greater
+functionality and easy of use.
+
+Twin is an intellegent system which takes full advantage of terminal
+capabilities in the terminfo database in order to maximize both
+CPU and I/O efficiency.  Twin will carry out all of its functions
+on any ascii terminal, but will choose the most efficient method
+possible given the capabilities available.  For example, a home
+magic sequence will be used to home the cursor if possible, but
+if not available, thome() will use cursor addressing to accomplish
+the job.  ( By calling tmove_to(terminal,0,0) )
+
+Curses output is done using writing to an image of the screen, and
+then calling refresh(), which attempts to update the physical
+screen in the most efficient way possible.  This method leads to
+minimal I/O bottlenecks, but with a rather high cost in CPU time.
+Twin functions immediately update the physical screen, so there
+is no need for CPU-expensive refresh() calls as in curses.  Twin does
+provide a set of functions which update only the image, and a redraw()
+function, in case curses style programming is desired.  This will not
+generally improve output efficiency, however, and may in fact degrade.
+
+The Twin system uses a layered approach to managing a terminal
+screen.  Applications generally use the window management functions, which
+in turn call image and terminal functions.
+
+.nf
+
+    Program --> Window -------> Terminal -----> Screen
+                Functions       Functions
+                   |               |
+                   v               v
+                Window          Screen
+                Image           Image
+    
+.fi
+
+Programs may also call terminal functions directly.  This will produce
+slightly more efficient code at the expense of window functionality.
+
+.nf
+    Program --> Terminal -----> Screen
+                Functions
+                   |
+                   v
+                Screen
+                Image
+    
+.fi
+
+Twin does not use any implicit functions.  The terminal or window
+to be effected is specified explicitly in each function call.
+There are no global variables to worry about behind the scenes.
+There is no special trick to accessing multiple terminals with Twin.
+Simply initialize each terminal with
+.cu
+init_term()
+and carry on.
+
+Using image functions directly can be done to simulate curses behavior.
+This may be useful when drawing complex windows to make the output
+run more smoothly.  ( Draw the window as a unit, instead of seeing
+lots of cursor movement )  It should be avoided if possible, however,
+since the technique tends to hide inefficiencies in the code that
+move around the image.
+
+The
+.B termios
+library is used by twin to control the serial port (tty) device driver.
+( See also termio, sgtty )
+
+.SH "FUNCTION SUMMARY"
+
+The following gives a synopsis of each function.  See individual
+manual entries and headers for further details.
+
+.B "Terminal functions"
+
+These functions update the screen and the screen image simultaneously.
+They do not manage windows, and should only be used where it
+is certain no windows will be needed.
+
+.nf
+init_term()             Initialize terminal control
+taddc()                 Add a character at the current position
+tchange_scroll_region() Change the scroll region of the terminal
+tclear_eol()            Clear to end of line
+tclear_eos()            Clear to end of screen
+tclear_screen()         Clear screen
+tdelete_ch()            Delete 1 character from the current line
+tdelete_line()          Delete 1 line
+tgetc()                 Get a character from the terminal input stream
+tgets()                 Get a string from the terminal input stream
+thome()                 Move cursor to home position
+tinsert_ch()            Insert 1 character into the current line
+tinsert_line()          Insert a blank line
+tinsert_mode()          * Put terminal in character insert mode
+tmove_to()              Move cursor to specified line and column
+tpop_tty()              Pop a saved tty mode from the stack (see termios)
+tprintf()               Print formatted text to terminal output
+tpush_tty()             Save current tty mode on the stack (see termios)
+tputc()                 Print a character to terminal output stream
+tputs()                 Print a string to terminal output stream
+tredraw()               Redraw the terminal image on the physical screen
+tredraw_line()          Redraw part of a line
+tredraw_line_leave_cursor() Redraw and don't restore cursor
+tscroll_forward()       Scroll forward
+tscroll_reverse()       Scroll backwards
+tset_background()       Set background color
+tset_control_char()     Set a tty control character (see termios)
+tset_foreground()       Set foreground color
+tset_modes()            Set character attributes (bold, underline, etc.)
+tset_startup_tty()      Restore tty mode to startup mode (see termios)
+tset_tty()              Turn on tty modes (see termios)
+tunset_tty()            Turn off tty modes (see termios)
+
+The following functions are not intended to be called by the application
+programmer, but are used by other terminal access functions.
+
+raw_print()         Used to print terminal control sequences
+init_names()        Copy terminal information into a term_t structure
+load_tinfo()        Load terminal information from terminfo database
+load_termcap()      Load terminal information from termcap database
+
+.B "Window functions"
+
+.fi
+These functions create and manipulate windows within the text screen.
+All window functions produce immediate results on the terminal screen.
+
+.nf
+del_win()           Close a window and free all memory associated with it
+new_win()           Open a new window with it's own image
+subwin()            Open a new window which shares the image of another
+waddstring()        Print a string
+wblank()            Blank a portion of a window (used on input fields)
+wborder()           Draw a border on the screen around a window
+wclear_win()        Clear a window
+wclear_eol()        Clear to end of line
+wclear_eow()        Clear to end of window
+wdelete_ch()        Delete 1 character from the current line
+wdelete_line()      Delete the current line
+wgetc()             Get one character from a window's terminal
+winsert_ch()        Insert 1 character into the current line
+winsert_line()      Insert a blank line into the window
+wmove_to()          Move the cursor to a line and column within a window
+wprintf()           Print formatted text in a window
+wprint_center()     Print a string centered on a line
+wputc()             Print one character to a window with auto margins
+wputs()             Print a string to a window (calls wputc)
+wredraw()           Redraw a window character by character
+wredraw_line()      Redraw a line or part of a line
+wredraw_line_leave_cursor() Redraw part of line and don't restore cursor
+wrestore()          Redraw portions of window not currently on screen
+wrestore_line()     Redraw portions of a line not currently on screen
+wrestore_line_leave_cursor() Redraw and don't restore cursor
+wscroll_forward()   Scroll window forward (image and physical screen)
+pwscroll_forward()  Scroll only physical screen window forward
+wscroll_reverse()   Scroll window backwards (image and physical screen)
+pwscroll_reverse()  Scroll only physical screen window backward
+wset_background()   Set background color
+wset_foreground()   Set foreground color
+
+.B "Image functions"
+
+.fi
+These functions are used by both terminal and window functions to
+maintain the screen or window image.  They may be called directly
+to simulate
+.cu
+curses
+behavior.  This is not recommended, however, since it requires time
+consuming redraws.
+
+.nf
+del_image()             Free image of a terminal or window
+iaddc()                 Add a character to an image
+ichange_scroll_region() Change scroll region of an image
+iclear_eol()            Clear image to end of line
+iclear_eos()            Clear to end of image
+iclr_image()            Clear image
+idelete_ch()            Delete 1 character from current line
+iinsert_ch()            Insert a character into current line
+imove_to()              Move to line and column of image
+inext_line()            Move to beginning next line (scrolls if needed)
+init_image()            Allocate and initialize a new image
+iputc()                 Print a character (performs wrap and scroll)
+iputs()                 Print a string to image (calls iputc)
+iscroll_forward()       Scroll image forward
+iscroll_reverse()       Scroll image backward
+sub_image()             Create a new image as part of another image
+
+.B "Screen input functions"
+
+.fi
+These functions are used to create flexible input templates.
+
+.nf
+
+init_enum()         Initialize input parameters for an enumerated string
+init_int()          Iniitalize input parameters for an integer
+init_string()       Initialize input parameters for a string
+print_current()     Display current values in input positions
+screen_input()      Beginning of all data
+wgetenum()          Input an enumerated string
+wgetint()           Input an integer
+wgetstring()        Input a string
+

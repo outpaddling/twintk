@@ -1,0 +1,29 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+#ifdef __STDC__
+int     tprintf(term_t *terminal,char *format,...)
+#else
+int     tprintf(terminal,format)
+term_t  *terminal;
+char    *format;
+#endif
+
+.fi
+.SH DESCRIPTION
+.SH EXAMPLE
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

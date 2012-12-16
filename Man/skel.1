@@ -1,0 +1,71 @@
+.TH Twin
+.SH NAME
+.PP
+
+init_term() - initialize terminal control
+
+.SH SYNOPSIS
+.nf
+#include <stdio.h>
+#include <direct.h> or <windows.h>
+
+term_t  *term(FILE *fpin, FILE *fpout, FILE *fperr, char *termtype);
+
+cc prog.c -ltwin
+
+.fi
+.SH DESCRIPTION
+
+.B init_term()
+allocates and initializes a
+.B term_t
+structure.  init_term() must be called prior to using any other
+.B twin
+screen control functions.
+
+Terminal information is read by init_term()
+from the terminfo database using the function
+.cu
+load_tinfo().
+The environment variable
+.cu
+TERMINFO
+can be used to specify the directory under which terminfo entries
+are found.  The default is
+.cu
+/usr/lib/terminfo.
+
+A screen image is also created by init_term() using the function
+.cu
+init_image().
+
+The I/O streams to be used for the terminal are specified by
+.B fpin,
+.B fpout,
+and
+.B fperr.
+These are normally stdin,
+stdout, and stderr if a single terminal is in use.  Multiple terminals
+can be used by an application if the appropriate FILE streams
+are opened.
+
+The last argument,
+.B termtype,
+specifies the terminal type in use.  If the argument is NULL, init_term()
+will check the environment variable
+.cu
+TERM.
+
+.SH Example
+
+The following is an example of a flashy (pun intended) version of
+hello world.
+
+.nf
+.so hello.c
+
+.SH "SEE ALSO"
+
+twin, curses, terminfo, termcap, termios, termio, sgtty, stty, environment,
+getenv()
+

@@ -1,0 +1,21 @@
+#!/bin/csh
+
+switch ( $OSTYPE )
+case    COHERENT:
+    foreach file (*.3)
+        set formatted = `echo $file | cut -f 1 -d '.'`
+        echo $formatted
+        nroff -man $file > /usr/man/LOCAL/$formatted
+        echo "LOCAL/$formatted\t$formatted" >> twin.index
+    end
+    mv twin.index /usr/man
+    breaksw
+case    FreeBSD:
+case    linux:
+    cp *.3 /usr/local/man/man3
+    breaksw
+default:
+    echo 'Unknown OS: '$OSTYPE
+endsw
+endif
+

@@ -1,0 +1,41 @@
+
+Create a new terminal emulator with:
+
+    1.  A very lightweight protocol (minimum bits transmitted for low-level
+	operations, like cursor moves, color changes, etc.  VT100
+	magic sequences are inexplicably fat, given that the original
+	terminals commonly used 300 baud serial connections.  The bloated
+	protocol made in impractical to utilize the capabilities of the
+	VT100, since it would take to long to do something as simple as
+	draw a nice looking color menu.  Most connection speed are much
+	faster now, but that's no reason to slack on designing a good
+	protocol.
+    2.  Vector graphics functionality.
+    3.  High-level menu GUI utilizing QT or GTK to create pop-down menus,
+	file browsers, etc., all controlled via SHORT magic sequences.
+    4.  Direct support for compact graphics encodings like jpeg and png
+	within the protocol.
+    5.  Macro capabilities: Terminal should be able to record complex
+	sequences, such as drawing menus, and return a macro ID to the
+	program for use on subsequent calls.  E.g., define a macro
+	for drawing the "File" menu, and from then on, just send a
+	"macro call" command and the macro ID.
+    
+    All this will require a new terminal database with capabilities beyond
+    termcap or terminfo.  Both these databases are badly broken anyway,
+    and might as well be scrapped.  Create a tool for translating 
+    termcap/terminfo to the new format.
+    
+    Ex.
+    
+    Move cursor:    \021 row col (3 bytes)
+    Set foreground: \022 RGB (encoded in bit fields, depending on
+		    depth of X11 display)
+    Draw jpeg:      Esc 1 32-bit size, data
+    Draw png:       Esc 2 32-bit size, data
+    Define macro:   Esc 20, macro sequence, Esc 20, read back macro ID
+    Invoke macro:   Esc 21, macro ID
+
+Use decset to make terminals send the backspace key
+listed in the termcap entry.
+

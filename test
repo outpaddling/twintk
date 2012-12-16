@@ -1,0 +1,11 @@
+#!/bin/csh
+
+build
+if ( $status == 0 ) then
+    cd Direct
+    cc -Wall -I ../../../Include dtest.c -o dtest -L../.. -ltwin -lextra
+    if ( $status == 0 ) then
+        dtest
+    endif
+endif
+

@@ -1,0 +1,81 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    wdelete_ch(win)
+win_t  *win;
+
+.fi
+.SH DESCRIPTION
+
+The
+.B wdelete_ch()
+function deletes a character at the current cursor position from the window
+.B win.
+All characters in win to the right of the cursor are shifted left, and the
+rightnmost position on the line is blanked.  If the window uses the full
+width of the terminal, then the terminfo
+.B delete_character
+magic sequence is used.  Otherwise, the line is redrawn by brute force
+from the cursor to the end of the line.
+
+.SH EXAMPLE
+.nf
+#include <unistd.h>
+#include "windows.h"
+
+int     main()
+
+{
+    term_t  *term;
+    win_t   *win;
+    char    *mesg = "  *** Hello, world! ***  *** Eat at Joes... ***  ",
+            *p;
+
+    /* Initialize terminal */
+    if ( (term = init_term(stdin,stdout,stderr,NULL)) == NULL )
+        return 1;
+    
+    /* Open window for marquee */
+    if ( (win = new_win(term,2,40,11,20)) == NULL )
+        return 1;
+    
+    /* Display quitting instructions and border */
+    wborder(win);
+    wprint_center(win,1,"Press <ctrl>+c to quit");
+    
+    /* Continually update marquee until user kills program */
+    while (1)
+    {
+        /* Display marquee message once */
+        for (p=mesg; *p!='\0'; ++p)
+        {
+            wmove_to(win,0,39);
+            wputc(win,*p);
+            wmove_to(win,0,0);
+            wdelete_ch(win);
+            WFLUSH_OUT(win);
+            usleep(200000);
+        }
+    }
+    
+    /* Free memory before quitting */
+    del_win(&win);
+    del_term(&term);
+    return 0;
+}
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

@@ -1,0 +1,5 @@
+#!/bin/csh
+
+set echo
+install -c *.h $INSTALL_ROOT/include
+

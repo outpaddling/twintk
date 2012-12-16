@@ -1,0 +1,76 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    wclear_win(win)
+win_t  *win;
+
+.fi
+.SH DESCRIPTION
+
+The
+.B wclear_win()
+function clears the window at address
+.B win.
+The window's image is filled with space characters, and the physical
+window is cleared by the most efficient method available.  If the window
+occupies the entire screen, wclear_win() uses the terminfo
+.B clear_screen
+magic sequence.  If the window is the full width of the screen, but
+not the full height, the terminfo
+.B clear_eol
+sequence is used to clear each line.  Smaller windows are
+cleared by brute force, i.e. printing spaces to every location.
+
+.SH EXAMPLE
+.nf
+
+    #include <windows.h>
+
+    int     main()
+
+    {
+        term_t  *term;
+        win_t   *win;
+    
+        /* Initialize terminal */
+        term = init_term(stdin,stdout,stderr,NULL);
+    
+        /* Create a new window */
+        win = new_win(term,10,60,8,10);
+    
+        /* Clear window */
+        wclear_win(win);
+        
+        /* Draw border around window */
+        WSET_MODE(win,BOLD_MODE);
+        wborder(win);
+        
+        /* Print a blinking message in the window */
+        WSET_MODE(win,BLINK_MODE);
+        wprint_center(win,4,"Hello, world!");
+        
+        /* Wait for user to press a key */
+        WSET_MODE(win,NORMAL_MODE);
+        wprint_center(win,5,"Press return to continue...");
+        wgetc(win);
+        
+        /* Delete window and terminal and quit */
+        del_win(&win);
+        del_term(&term);
+        return 0;
+    }
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

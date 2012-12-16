@@ -1,0 +1,23 @@
+.TH TWIN 1
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include "direct.h"
+
+#ifdef __STDC__
+int     tprintf(term_t *terminal,char *format,...)
+#else
+int     tprintf(terminal,format)
+term_t  *terminal;
+char    *format;
+#endif
+
+.fi
+.SH DESCRIPTION
+.SH EXAMPLE
+.SH FILES
+.SH SEE ALSO
+.SH AUTHOR

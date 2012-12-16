@@ -1,0 +1,43 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+int     wdump(win,filename)
+win_t   *win;
+char    *filename;
+
+.fi
+.SH DESCRIPTION
+The
+.B wdump()
+function writes the image of
+.B win
+to the file
+.B filename.
+
+.SH RETURN\ VALUE
+wdump returns the constant
+.B SUCCESS
+if the file is successfully written, and
+.B FAILURE
+if not.
+
+.SH PITFALLS
+
+You must have permission to write to the current directory, or the
+directory specified in filename.
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

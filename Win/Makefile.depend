@@ -1,0 +1,292 @@
+del_win.o: del_win.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} del_win.c
+
+init_double.o: init_double.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_double.c
+
+init_enum.o: init_enum.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_enum.c
+
+init_int.o: init_int.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_int.c
+
+init_ldouble.o: init_ldouble.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_ldouble.c
+
+init_llong.o: init_llong.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_llong.c
+
+init_long.o: init_long.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_long.c
+
+init_menu.o: init_menu.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_menu.c
+
+init_string.o: init_string.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} init_string.c
+
+new_win.o: new_win.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} new_win.c
+
+panel_check.o: panel_check.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} panel_check.c
+
+print_cur.o: print_cur.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} print_cur.c
+
+sub_win.o: sub_win.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} sub_win.c
+
+waddstr.o: waddstr.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} waddstr.c
+
+wblank.o: wblank.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wblank.c
+
+wbut_resp.o: wbut_resp.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wbut_resp.c
+
+wclear.o: wclear.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wclear.c
+
+wclear_eol.o: wclear_eol.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wclear_eol.c
+
+wclear_eow.o: wclear_eow.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wclear_eow.c
+
+wdelete_ch.o: wdelete_ch.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wdelete_ch.c
+
+wdelete_line.o: wdelete_line.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wdelete_line.c
+
+wdump.o: wdump.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wdump.c
+
+wget_item.o: wget_item.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wget_item.c
+
+wget_path.o: wget_path.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wget_path.c
+
+wget_resp.o: wget_resp.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wget_resp.c
+
+wgetc.o: wgetc.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wgetc.c
+
+wgetenum.o: wgetenum.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wgetenum.c
+
+wgetevent.o: wgetevent.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wgetevent.c
+
+wgetfloat.o: wgetfloat.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wgetfloat.c
+
+wgetint.o: wgetint.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wgetint.c
+
+wgetmenu.o: wgetmenu.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h \
+  /usr/local/include/bacon.h
+	${CC} -c ${CFLAGS} wgetmenu.c
+
+wgetseq.o: wgetseq.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wgetseq.c
+
+wgetstring.o: wgetstring.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wgetstring.c
+
+whigh_print.o: whigh_print.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} whigh_print.c
+
+whl_menu.o: whl_menu.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} whl_menu.c
+
+whome.o: whome.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} whome.c
+
+winn_border.o: winn_border.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} winn_border.c
+
+winput_pan.o: winput_pan.c /usr/local/include/bacon.h twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} winput_pan.c
+
+winsert_ch.o: winsert_ch.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} winsert_ch.c
+
+winsert_line.o: winsert_line.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} winsert_line.c
+
+wlist_win.o: wlist_win.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wlist_win.c
+
+wmenu.o: wmenu.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmenu.c
+
+wmouseinwin.o: wmouseinwin.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmouseinwin.c
+
+wmove_down.o: wmove_down.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmove_down.c
+
+wmove_left.o: wmove_left.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmove_left.c
+
+wmove_right.o: wmove_right.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmove_right.c
+
+wmove_to.o: wmove_to.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmove_to.c
+
+wmove_up.o: wmove_up.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmove_up.c
+
+wmsg_win.o: wmsg_win.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wmsg_win.c
+
+wout_border.o: wout_border.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wout_border.c
+
+wprint_cen.o: wprint_cen.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wprint_cen.c
+
+wprintat.o: wprintat.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wprintat.c
+
+wprintf.o: wprintf.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wprintf.c
+
+wputc.o: wputc.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wputc.c
+
+wputs.o: wputs.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wputs.c
+
+wredraw.o: wredraw.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wredraw.c
+
+wredraw_all.o: wredraw_all.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wredraw_all.c
+
+wredraw_line.o: wredraw_line.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wredraw_line.c
+
+wresp_win.o: wresp_win.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wresp_win.c
+
+wrestore.o: wrestore.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wrestore.c
+
+wrestore_lin.o: wrestore_lin.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wrestore_lin.c
+
+wscroll_bar.o: wscroll_bar.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wscroll_bar.c
+
+wscroll_for.o: wscroll_for.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wscroll_for.c
+
+wscroll_rev.o: wscroll_rev.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wscroll_rev.c
+
+wset_bg.o: wset_bg.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wset_bg.c
+
+wset_fg.o: wset_fg.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wset_fg.c
+
+wset_wattr.o: wset_wattr.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wset_wattr.c
+
+wshadow.o: wshadow.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wshadow.c
+
+wsync_modes.o: wsync_modes.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wsync_modes.c
+
+wunlist_win.o: wunlist_win.c twintk.h /usr/local/include/twintk_term.h \
+  /usr/local/include/twintk_image.h /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} wunlist_win.c
+

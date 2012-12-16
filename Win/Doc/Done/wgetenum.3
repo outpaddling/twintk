@@ -1,0 +1,99 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+int     wgetenum(win, string, list, str_len)
+win_t   *win;
+char   *string;
+char    *list[];
+unsigned str_len;
+
+.fi
+.SH DESCRIPTION
+
+The 
+.B wgetenum()
+function is used to select a string value from an enumerated list.
+
+wgetenum() is normally used by
+.B screen_input(),
+but may be called independently as well.
+
+When invoked, wgetenum() displays the first string in the list.
+The value displayed can be toggled by the user pressing the space
+bar until the desired value appears, or the list recycles back to the
+first value.
+
+wgetenum() returns when the user presses any of the input-terminating
+keys defined by
+.B end_input()
+and used by
+.B screen_input().
+See screen_input() for details.
+
+.cu
+PARAMETERS:
+
+.B win
+is the window in which the values are displayed.
+
+.B string
+is the array in which the selected value will be stored.
+
+.B list
+is an array of string pointers containing the list of values
+to select from.
+.cu
+The last value in the list must be NULL.
+
+.B str_len
+is the length of the input field.  It
+should be at least the length of the longest string in
+.B list,
+and no longer than the size of the array
+.B string
+(minus one to leave room for the null terminator).
+
+.SH RETURN\ VALUE
+
+wgetenum() returns the terminating key.  (e.g. ctrl+d, up-arrow, etc.)
+
+.SH PITFALLS
+
+Make sure the end of
+.B list
+is marked by a NULL pointer.
+
+Make sure str_len does not exceed the size of the string array.
+
+.SH EXAMPLE
+
+.nf
+#define DAY_LEN 3
+
+int     main()
+
+{
+    char    *list[8] = {"Sun","Mon","Tue","Wed","Thu","Fri","Sat",NULL},
+            day[DAY_LEN+1];
+    win_t   *win;
+    int     status;
+    ...
+    status = wgetenum(win,day,list,DAY_LEN);
+    ...
+.fi
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

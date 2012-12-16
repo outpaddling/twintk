@@ -1,0 +1,142 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    init_int(field, line, col, minval, maxval, prompt, help, int_ptr)
+field_t *field;
+unsigned line, col;
+int     minval, maxval;
+char   *prompt, *help;
+int    *int_ptr;
+
+.fi
+.SH DESCRIPTION
+
+.B init_int()
+initializes an int field for the
+.B screen_input()
+function.  
+
+.cu
+Parameters:
+
+.cu
+field
+is the address of one element in an array of
+.B field_t
+records.  ( See
+.B screen_input()
+for more information about the
+field_t structure )
+
+.cu
+line
+and
+.cu
+col
+give the coordinates within the window where the input prompt will
+be displayed.  The data will be input to the immediate right of
+the input prompt, at coordinates [line,col+strlen(prompt)].  You can adjust
+the input location by padding the prompt with trailing spaces.
+
+.cu
+.B minval
+and
+.B maxval
+are the minimum and maximum values that screen_input() will
+accept as input for this field.
+screen_input() will reject any digits typed that would
+put the input value outside the specified range.
+
+.cu
+prompt
+is the input prompt which will be displayed alongside the input data.
+
+.cu
+help
+is a message which is displayed in the input window when
+this field is visited.  The exact location of the help message
+is specified when calling
+.B screen_input().
+
+.cu
+int_ptr
+is the address where the value will be copied by screen_input().
+The incoming value at int_ptr will be used as the default value.
+If the first character typed is a digit, '.', or '-', then the
+default value will be erased and replaced by the new value typed.
+Otherwise, the value may be edited using the cursor motion features
+described under
+.B screen_input().
+
+.SH PITFALLS
+
+.B field
+must be the address of a valid array element.
+
+.SH EXAMPLE
+.nf
+#include <windows.h>
+
+#define NAME_LEN    40
+#define GENDER_LEN  6
+
+int     get_data(win_t *win,char name[],char gender[],int *age);
+
+int     main()
+
+{
+    char    name[NAME_LEN+1] = "",gender[GENDER_LEN+1] = "";
+    int     age = 0;
+    term_t  *term;
+    win_t   *win;
+    
+    /* Initialize terminal */
+    term = init_term(stdin,stdout,stderr,NULL);
+    
+    /* Create input window */
+    win = new_win(term,10,60,10,10);
+    wborder(win);
+    
+    /* Input data */
+    get_data(win,name,gender,&age);
+    
+    /* Free window */
+    del_win(&win);
+    return 0;
+}
+
+
+int     get_data(win_t *win,char name[],char gender[],int *age)
+
+{
+    field_t fields[3];
+    char    *genders[3] = {"Male","Female",NULL};
+    
+    /* Initialize fields */
+    init_string(fields+0,2,2,NAME_LEN,CAPITALIZED,"Full name: ",
+        " Enter first name, last name, and middle initial. ",name);
+    init_enum(fields+1,3,2,GENDER_LEN,genders,"Gender: ",
+        " Press <space> to toggle ",gender);
+    init_int(fields+2,4,2,0,130,"Age: ",
+        " Enter your age in years ",age);
+    
+    /* Input the data */
+    screen_input(win,fields,3,WLINES(win)-3);
+    return 0;
+}
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

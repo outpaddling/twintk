@@ -1,0 +1,38 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    wblank(win, len)
+win_t   *win;
+unsigned len;
+
+.fi
+.SH DESCRIPTION
+
+The
+.B wblank()
+function prints
+.B len
+space characters in
+.B win
+beginning at the current cursor location for win.
+The cursor is returned to the original position.
+
+wblank() is used primarily by the
+.B screen_input()
+function to blank input fields.
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

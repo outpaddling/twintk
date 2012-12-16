@@ -1,0 +1,47 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    print_current(win, fields, nfields)
+win_t   *win;
+field_t *fields;
+unsigned nfields;
+
+.fi
+.SH DESCRIPTION
+
+The
+.B print_current()
+function displays the prompts and default values for each
+member of the array
+.B fields.
+( For more information on the
+.B field_t
+structure, see
+.B screen_input.
+)
+
+The function
+.B screen_input()
+calls print_current() before accepting input.
+
+.SH PITFALLS
+
+print_current() is an accessory function used by other TWINLIB
+functions.
+It is unlikely that you will find a need to call print_current() directly.
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

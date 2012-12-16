@@ -1,0 +1,5 @@
+twin_test.o: twin_test.c /usr/local/include/twintk.h \
+  /usr/local/include/twintk_term.h /usr/local/include/twintk_image.h \
+  /usr/local/include/twintk_mouse.h
+	${CC} -c ${CFLAGS} twin_test.c
+

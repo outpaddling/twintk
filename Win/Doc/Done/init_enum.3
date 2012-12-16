@@ -1,0 +1,158 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    init_enum(field, line, col, len, list, prompt, help, enum_ptr)
+field_t *field;
+int     line, col, len;
+char    *list[], *prompt, *help, *enum_ptr;
+
+.fi
+.SH DESCRIPTION
+
+.B init_enum()
+initializes a field for the
+.B screen_input()
+function.  Enumerated fields are strings, selected in the screen_input()
+function from among the array of strings
+.B list,
+by pressing the space bar to toggle from one string
+to the next.
+
+.cu
+Parameters:
+
+.cu
+field
+is the address of one element in an array of
+.B field_t
+records.  ( See
+.B screen_input()
+for more information about the
+field_t structure )
+
+.cu
+line
+and
+.cu
+col
+give the coordinates within the window where the input prompt will
+be displayed.  The data will be input to the immediate right of
+the input prompt, at coordinates [line,col+strlen(prompt)].  You can adjust
+the input location by padding the prompt with trailing spaces.
+
+.cu
+len
+is the maximum length of the string to be input, i.e. the size
+of the array
+.cu
+enum_ptr.
+If the string selected from list is longer than len, it will be truncated
+to fit the array.
+This is primarily a safety measure to remind you to use a large enough
+array for enum_ptr.
+
+.cu
+list
+is an array of pointers to the strings available for selection.
+The last pointer in the last should be set to NULL so that screen_input()
+will know when to toggle back to the beginning of the list.
+
+.cu
+prompt
+is the input prompt which will be displayed alongside the input data.
+
+.cu
+help
+is a message which is displayed in the input window when
+this field is visited.  The exact location of the help message
+is specified when calling
+.B screen_input().
+
+.cu
+enum_ptr
+is the address where the selected string will be copied by screen_input().
+The incoming string at enum_ptr will be used as the starting point
+if the string matches one of those in
+.cu
+list.
+If enum_ptr is NULL, points to '\\0', or points to a string that is not in
+list, the rotation will begin with list[0].
+
+.SH PITFALLS
+
+.B field
+must be the address of a valid array element.
+The last element in
+.B list
+must be NULL.
+.B len
+must be less than or equal to the size of
+.B enum_ptr.
+
+.SH EXAMPLE
+.nf
+#include <windows.h>
+
+#define NAME_LEN    40
+#define GENDER_LEN  6
+
+int     get_data(win_t *win,char name[],char gender[],int *age);
+
+int     main()
+
+{
+    char    name[NAME_LEN+1] = "",gender[GENDER_LEN+1] = "";
+    int     age = 0;
+    term_t  *term;
+    win_t   *win;
+    
+    /* Initialize terminal */
+    term = init_term(stdin,stdout,stderr,NULL);
+    
+    /* Create input window */
+    win = new_win(term,10,60,10,10);
+    wborder(win);
+    
+    /* Input data */
+    get_data(win,name,gender,&age);
+    
+    /* Free window */
+    del_win(&win);
+    return 0;
+}
+
+
+int     get_data(win_t *win,char name[],char gender[],int *age)
+
+{
+    field_t fields[3];
+    char    *genders[3] = {"Male","Female",NULL};
+    
+    /* Initialize an enumerated field */
+    init_string(fields+0,2,2,NAME_LEN,CAPITALIZED,"Full name: ",
+        " Enter first name, last name, and middle initial. ",name);
+    init_enum(fields+1,3,2,GENDER_LEN,genders,"Gender: ",
+        " Press <space> to toggle ",gender);
+    init_int(fields+2,4,2,0,130,"Age: ",
+        " Enter your age in years ",age);
+    
+    /* Input the data */
+    screen_input(win,fields,3,WLINES(win)-3);
+    return 0;
+}
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

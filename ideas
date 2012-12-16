@@ -1,0 +1,51 @@
+
+Create new terminal emulator with GUI functions
+	fonts, raised letters for bold, etc.
+
+DO enforce policy in some areas
+    USER friendly is more important than PROGRAMMER friendly
+
+allocation function with retry/cancel popup
+
+Add history option to wgetstring(), if history arg is non-NULL.
+
+Drag-and-drop fields in winput_panel.  Associate each position
+in a menu bar with a value, that can be dropped into text or numeric
+fields.
+
+Clicking hbar should page left, not scroll left
+
+Add get_char() function alongside get_short(), ...
+
+Let tgetevent receive events from any fd
+
+Functions to map strings to/from constants for enum fields
+
+Maybe have programmer call wlist_win() instead of listing every window
+in simple_win().
+
+Do something to prevent BUS mouse from messing things up if misconfigured
+as a serial mouse.
+
+Document writing new mouse servers
+
+Add wgettable() function for spreadsheet entry
+
+Warn about danger of mouse cursor being overwritten.
+    
+Allow diff windows to have diff terminal attributes and event masks.
+
+Add max_height or height argument to wmenu() and scroll when necessary.
+
+Add array of alternate file descriptors to receive events from.
+(Useful for terminal emulators, etc.)
+
+Allow wget_enum() to input arbitrary strings.
+
+Filename completion in wgetstring.
+
+Make input panel function that automatically creates a window big
+enough and calls screen_input().
+
+Have wgetstring scroll back to beginning of string after entered.
+

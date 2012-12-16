@@ -1,0 +1,5 @@
+
+screen_input() infinite loop if window not wide enough.
+
+sub_win() should return error if window too big.
+

@@ -1,0 +1,27 @@
+   Normal tracking mode sends an escape sequence
+    on both button press and release.  Modifier key
+    (shift, ctrl, meta) information is also sent.  It
+    is enabled by specifying parameter 1000 to DECSET.
+
+    [...]
+
+    Button-event tracking is essentially the same as normal
+    tracking, but xterm also reports button-motion events.
+    Motion events are reported only if the mouse pointer has
+    moved to a different character cell.  It is enabled by
+    specifying parameter 1002 to DECSET.  On button press
+    or release, xterm sends the same codes used by normal
+    tracking mode.  On button-motion events, xterm adds 32 to
+    the event code (the third charac- ter, Cb).  The other
+    bits of the event code specify button and modifier keys
+    as in normal mode.  For example, motion into cell x,y
+    with button 1 down is reported as CSI M @ CxCy. ( @ =
+    32 + 0 (button 1) + 32 (motion indicator) ). Similarly,
+    motion with button 3 down is reported as CSI M B CxCy.
+    ( B = 32 + 2 (button 3) + 32 (motion indicator) ).
+
+    Any-event mode is the same as button-event mode,
+    except that all motion events are reported instead
+    of just those that enter a new character cell.
+    It is enabled by specifying 1003 to DECSET.
+

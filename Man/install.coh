@@ -1,0 +1,5 @@
+#!/bin/sh
+
+nroff -man twin.1 > /usr/man/LOCAL/twin
+chmod 644 /usr/man/LOCAL/twin
+

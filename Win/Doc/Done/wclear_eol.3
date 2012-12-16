@@ -1,0 +1,39 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    wclear_eol(win)
+win_t    *win;
+
+.fi
+.SH DESCRIPTION
+
+The
+.B wclear_eol()
+function clears
+.B win
+from the window's current cursor position to the end of the line.
+The cursor position is not changed.
+
+If the window is the full width of the terminal, the terminfo
+.B clear_eol
+magic sequence is used.  Otherwise, the line is cleared by brute
+force, i.e. printing space characters and then returning to the
+original cursor position.
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios,
+wclear_win()
+
+.SH AUTHOR
+
+Jason W. Bacon

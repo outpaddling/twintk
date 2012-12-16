@@ -1,0 +1,35 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    wdelete_line(win)
+win_t   *win;
+
+.fi
+.SH DESCRIPTION
+The 
+.B wdelete_line()
+function deletes the current line from the window
+.B win.
+All lines below are scrolled up, and the bottom line
+is left blank.
+
+If the window occupies the full width of the screen, the terminfo
+.B delete_line
+magic sequence is used.  Otherwise, the window is redrawn from the current
+line down.
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

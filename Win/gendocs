@@ -1,0 +1,18 @@
+#!/bin/csh
+
+echo 'This script generates man pages from .c files.'
+echo -n 'Continue? (y/n) '
+set junk=`line`
+if ( $junk != 'y' ) then
+    exit 0
+endif
+foreach file (*.c)
+    echo $file >temp
+    set junk = `cut -f 1 -d '.' temp`
+    set docfile = Doc/$junk.3
+    if ( !(-e $docfile) ) then
+        echo $docfile
+        makedoc <$file >$docfile
+    endif
+end
+

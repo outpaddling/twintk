@@ -1,0 +1,66 @@
+del_image.o: del_image.c twintk_image.h
+	${CC} -c ${CFLAGS} del_image.c
+
+iaddc.o: iaddc.c twintk_image.h
+	${CC} -c ${CFLAGS} iaddc.c
+
+ichange_sreg.o: ichange_sreg.c twintk_image.h
+	${CC} -c ${CFLAGS} ichange_sreg.c
+
+iclear_eol.o: iclear_eol.c twintk_image.h
+	${CC} -c ${CFLAGS} iclear_eol.c
+
+iclear_eos.o: iclear_eos.c twintk_image.h
+	${CC} -c ${CFLAGS} iclear_eos.c
+
+iclr_image.o: iclr_image.c twintk_image.h
+	${CC} -c ${CFLAGS} iclr_image.c
+
+idelete_ch.o: idelete_ch.c twintk_image.h
+	${CC} -c ${CFLAGS} idelete_ch.c
+
+idump.o: idump.c twintk_image.h
+	${CC} -c ${CFLAGS} idump.c
+
+iinsert_ch.o: iinsert_ch.c twintk_image.h
+	${CC} -c ${CFLAGS} iinsert_ch.c
+
+imove_down.o: imove_down.c twintk_image.h
+	${CC} -c ${CFLAGS} imove_down.c
+
+imove_left.o: imove_left.c twintk_image.h
+	${CC} -c ${CFLAGS} imove_left.c
+
+imove_right.o: imove_right.c twintk_image.h
+	${CC} -c ${CFLAGS} imove_right.c
+
+imove_to.o: imove_to.c twintk_image.h
+	${CC} -c ${CFLAGS} imove_to.c
+
+imove_up.o: imove_up.c twintk_image.h
+	${CC} -c ${CFLAGS} imove_up.c
+
+inext_line.o: inext_line.c twintk_image.h
+	${CC} -c ${CFLAGS} inext_line.c
+
+init_image.o: init_image.c twintk_image.h
+	${CC} -c ${CFLAGS} init_image.c
+
+iputc.o: iputc.c twintk_image.h
+	${CC} -c ${CFLAGS} iputc.c
+
+iputs.o: iputs.c twintk_image.h
+	${CC} -c ${CFLAGS} iputs.c
+
+iscroll_for.o: iscroll_for.c twintk_image.h
+	${CC} -c ${CFLAGS} iscroll_for.c
+
+iscroll_rev.o: iscroll_rev.c twintk_image.h
+	${CC} -c ${CFLAGS} iscroll_rev.c
+
+new_image.o: new_image.c twintk_image.h
+	${CC} -c ${CFLAGS} new_image.c
+
+sub_image.o: sub_image.c twintk_image.h
+	${CC} -c ${CFLAGS} sub_image.c
+

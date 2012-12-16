@@ -1,0 +1,7 @@
+#!/bin/csh -f
+
+set echo
+install -c tmouse $INSTALL_ROOT/bin
+install -c mouse.h /usr/local/include
+install -c mouse_protos.h /usr/local/include
+

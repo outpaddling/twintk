@@ -1,0 +1,53 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+void    waddstring(win, string, maxlen)
+win_t   *win;
+char   *string;
+unsigned maxlen;
+
+.fi
+.SH DESCRIPTION
+
+The
+.B waddstring()
+function displays a string in the window
+.B win
+at the current cursor poistion for that window.
+The current colors or attributes for that window are also used.
+
+waddstring bahaves exactly like
+.B wputs(),
+except that it limits the length of the printed string.
+
+.cu
+PARAMETERS:
+
+.cu
+win
+is the window in which the string will be displayed.
+
+.cu
+string
+is the string displayed.
+
+.cu
+maxlen
+is the maximum number of characters to be printed.  If the string
+is longer than maxlen, only the first maxlen characters will be printed.
+
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon

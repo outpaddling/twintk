@@ -1,0 +1,36 @@
+.TH TWIN 3
+.SH NAME
+.PP
+TWIN - Terminal Windows Library
+.SH SYNOPSIS
+.PP
+.nf
+#include <windows.h>
+
+#if __STDC__ || defined(SCO)
+int     wprintat(win_t *win,unsigned line,unsigned col,char *format,...)
+#else
+int     wprintat(win,line,col,format)
+win_t   *win;
+unsigned line,col;
+char    *format;
+#endif
+
+.fi
+.SH WHAT\ IT\ IS
+.SH DESCRIPTION
+.cu
+PARAMETERS:
+
+.SH RETURN\ VALUE
+.SH PITFALLS
+.SH EXAMPLE
+.SH FILES
+
+libtwin.a, windows.h, terminal.h, image.h
+.SH SEE\ ALSO
+
+twin, termcap, terminfo, cc, ld, curses, ioctl, sgtty, termio, termios
+.SH AUTHOR
+
+Jason W. Bacon
