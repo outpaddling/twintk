@@ -299,6 +299,7 @@ term_t   *terminal;
 	 (strstr(terminal->term_type,"xterm") != NULL) ||
 	 (strstr(terminal->term_type,"rxvt") != NULL) ||
 	 (memcmp(terminal->term_type,"gnome", 5) == 0) ||
+	 (memcmp(terminal->term_type,"xfce",4) == 0) ||
 	 (memcmp(terminal->term_type,"ansi",4) == 0) ||
 	 /*
 	  * xfce4 Terminal has wrong magic sequences for arrow keys
