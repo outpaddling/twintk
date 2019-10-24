@@ -67,13 +67,6 @@ enum { C_IFLAG, C_OFLAG, C_CFLAG, C_LFLAG, C_LINE };
 
 #define TERMINFO_DIR    "share/twintk/terminfo"
 
-/* Don't know why, but APE dumps core on hpux with 128 */
-#ifdef hpux
-#define PATH_LEN        256
-#else
-#define PATH_LEN        128
-#endif
-
 #define STACKSIZE       40
 
 #define npush(x)    if (stack_index < STACKSIZE)\

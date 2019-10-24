@@ -17,9 +17,9 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
     win_t   *names_win, *dirs_win;
     tw_panel_t panel = TWC_PANEL_INIT;
     char    old_file_spec[TWC_SPEC_LEN + 1] = "",
-	    old_dir[PATH_LEN+1] = "",
-	    current_dir[PATH_LEN+1] = "",
-	    request_dir[PATH_LEN+1] = "",
+	    old_dir[PATH_MAX+1] = "",
+	    current_dir[PATH_MAX+1] = "",
+	    request_dir[PATH_MAX+1] = "",
 	    temp_name[TWC_FILENAME_LEN+1] = "",
 	    menu_request_dir[TWC_FILENAME_LEN+1] = "",
 	    *file_names[TWC_MAX_FILENAMES+1],
@@ -27,12 +27,12 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
 	    **p;
     int     dir_spec_changed, file_spec_changed, last_field, status;
 
-    if ( getcwd(current_dir,PATH_LEN-1) == NULL )
+    if ( getcwd(current_dir,PATH_MAX-1) == NULL )
     {
 	/*sprintw(2,TWC_ST_LEN,"Cannot determine current working directory.");*/
 	return TWC_INPUT_CANCEL;
     }
-    strlcpy(old_dir,current_dir,PATH_LEN);
+    strlcpy(old_dir,current_dir,PATH_MAX);
     
     /* Create subwindows with same attributes, minus drop tw_shadows */
     names_win = tw_sub_win(win,TW_LINES(win)-8,
@@ -82,7 +82,7 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
 	TW_RESET_PANEL(&panel);
 	
 	/* List files in current directory */
-	strlcpy(request_dir,current_dir,PATH_LEN);
+	strlcpy(request_dir,current_dir,PATH_MAX);
 	tw_init_string(&panel, TW_LINES(win) - 6, 3, TWC_FILENAME_LEN,
 		TW_COLS(win)-18, TWC_VERBATIM, "Filename? ",
 		"Enter the name of the file to load.", temp_name);
@@ -90,7 +90,7 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
 		file_names, "Use arrows to move, <Ctrl>+d to open file, TAB to exit menu.",temp_name);
 	tw_init_menu(&panel, dirs_win, TWC_FILENAME_LEN,
 		dir_names, "Use arrows to move, <Ctrl>+d to open directory, TAB to exit menu.",menu_request_dir);
-	tw_init_string(&panel, TW_LINES(win) - 7, 3, PATH_LEN,
+	tw_init_string(&panel, TW_LINES(win) - 7, 3, PATH_MAX,
 		30, TWC_VERBATIM, "Directory? ",
 		"Enter a full or relative directory name, then type <Ctrl>+d.",
 		request_dir);
@@ -142,7 +142,7 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
 		/*sprintw(2,TWC_ST_LEN,"Cannot open directory \"%s\".",request_dir);*/
 	    }
 	    else
-		getcwd(current_dir,PATH_LEN-1);
+		getcwd(current_dir,PATH_MAX-1);
 	}
 
 	/* Free file and directory names */

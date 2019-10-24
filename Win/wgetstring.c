@@ -154,7 +154,7 @@ char    *history[];
 	    case    '\t':   /* Filename completion */
 		break;
 		/*
-		snprintf(pattern,PATH_LEN,"%s*",temp);
+		snprintf(pattern,PATH_MAX,"%s*",temp);
 		glob(pattern,0,NULL,&glob_list);
 		if ( glob_list.gl_matchc != 1 )
 		    break;
