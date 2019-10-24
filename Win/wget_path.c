@@ -20,8 +20,8 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
 	    old_dir[PATH_MAX+1] = "",
 	    current_dir[PATH_MAX+1] = "",
 	    request_dir[PATH_MAX+1] = "",
-	    temp_name[TWC_FILENAME_LEN+1] = "",
-	    menu_request_dir[TWC_FILENAME_LEN+1] = "",
+	    temp_name[PATH_MAX+1] = "",
+	    menu_request_dir[PATH_MAX+1] = "",
 	    *file_names[TWC_MAX_FILENAMES+1],
 	    *dir_names[TWC_MAX_FILENAMES+1],
 	    **p;
@@ -83,12 +83,12 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
 	
 	/* List files in current directory */
 	strlcpy(request_dir,current_dir,PATH_MAX);
-	tw_init_string(&panel, TW_LINES(win) - 6, 3, TWC_FILENAME_LEN,
+	tw_init_string(&panel, TW_LINES(win) - 6, 3, PATH_MAX,
 		TW_COLS(win)-18, TWC_VERBATIM, "Filename? ",
 		"Enter the name of the file to load.", temp_name);
-	tw_init_menu(&panel, names_win, TWC_FILENAME_LEN,
+	tw_init_menu(&panel, names_win, PATH_MAX,
 		file_names, "Use arrows to move, <Ctrl>+d to open file, TAB to exit menu.",temp_name);
-	tw_init_menu(&panel, dirs_win, TWC_FILENAME_LEN,
+	tw_init_menu(&panel, dirs_win, PATH_MAX,
 		dir_names, "Use arrows to move, <Ctrl>+d to open directory, TAB to exit menu.",menu_request_dir);
 	tw_init_string(&panel, TW_LINES(win) - 7, 3, PATH_MAX,
 		30, TWC_VERBATIM, "Directory? ",
@@ -131,7 +131,7 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
 	{
 	    /*sprintw(2,50,"Changing request_dir to %s",menu_request_dir);
 	    tgetc(term);*/
-	    strlcpy(request_dir,menu_request_dir,TWC_FILENAME_LEN);
+	    strlcpy(request_dir,menu_request_dir,PATH_MAX);
 	}
 	
 	file_spec_changed = strcmp(old_file_spec, file_spec);
@@ -156,7 +156,7 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
     if ( (*temp_name == '\0') || (TW_EXIT_KEY(status) == TWC_INPUT_CANCEL) )
 	chdir(old_dir);
     else
-	meta_chars(file_name,temp_name,TWC_FILENAME_LEN);
+	meta_chars(file_name,temp_name,PATH_MAX);
     tw_del_win(&dirs_win);
     tw_del_win(&names_win);
     return status;

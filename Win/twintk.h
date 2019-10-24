@@ -152,7 +152,6 @@ typedef struct
 
 /* Constants for tw_get_pathname */
 #define TWC_SPEC_LEN        28
-#define TWC_FILENAME_LEN    FILENAME_MAX
 #define TWC_MAX_FILENAMES   2000
 #define TWC_ST_LEN          54
 #define TWC_MAX_SPECS       20
