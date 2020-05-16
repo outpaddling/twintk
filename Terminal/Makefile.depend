@@ -169,13 +169,13 @@ traw_mode.o: traw_mode.c twintk_term.h ../Image/twintk_image.h \
   ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} traw_mode.c
 
-tredraw.o: tredraw.c twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
-	${CC} -c ${CFLAGS} tredraw.c
-
 tredraw_line.o: tredraw_line.c twintk_term.h ../Image/twintk_image.h \
   ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} tredraw_line.c
+
+tredraw.o: tredraw.c twintk_term.h ../Image/twintk_image.h \
+  ../Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} tredraw.c
 
 tscroll_for.o: tscroll_for.c twintk_term.h ../Image/twintk_image.h \
   ../Mouse/twintk_mouse.h

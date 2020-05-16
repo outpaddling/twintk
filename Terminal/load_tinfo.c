@@ -31,6 +31,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/param.h>
 #include <time.h>
 #include <stdio.h>
 #include <errno.h>
@@ -48,8 +49,8 @@ term_t *terminal;
 {
     int     fd = -1, bytes_read, num_strings, i;
     struct header header;
-    char    ch, filename[MAXPATH + 1], term_names[NAME_SIZE], *dir, *path,
-	    temp_path[MAXPATH+1] = "",message[81];
+    char    ch, filename[PATH_MAX + 1], term_names[NAME_SIZE], *dir, *path,
+	    temp_path[PATH_MAX+1] = "",message[81];
     extern int errno;
 
     /* Temp space to inhale terminfo data into */
@@ -63,15 +64,15 @@ term_t *terminal;
 
     /* Must be fixed length static array so patch can replace with
        potentially longer string */
-    static char twin_path[MAXPATH+1] = "No Twinpath";
+    static char twin_path[PATH_MAX+1] = "No Twinpath";
     
     /* TWINPATH env overrides built-in default */
     if ( (path = getenv("TWINPATH")) != NULL )
-	strlcpy(temp_path,path,MAXPATH);
+	strlcpy(temp_path,path,PATH_MAX);
     /* Avoid putting "No Path" in again since patch will replace it */
     else if ( memcmp(twin_path,"No ",3) != 0 )
     {
-	strlcpy(temp_path,twin_path,MAXPATH);
+	strlcpy(temp_path,twin_path,PATH_MAX);
     }
     
     dir = strtok(temp_path,":");

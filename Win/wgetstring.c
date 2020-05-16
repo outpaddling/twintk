@@ -5,6 +5,16 @@
 #include "bacon.h"
 #include "twintk.h"
 
+void    tw_get_string_putc(win_t *win, int ch,tw_str_t string_type)
+
+{
+    if ( string_type == TWC_SECURE )
+	tw_putc(win, '*');
+    else
+	tw_putc(win,ch);
+}
+
+
 char    *tw_get_string(win, string, maxlen, field_width, string_type, event)
 win_t  *win;
 char   *string;
@@ -33,6 +43,10 @@ char    *history[];
     char    *temp = (char *)malloc(maxlen+1);
     term_t  *term = win->terminal;
     
+    /* If secure (invisible) input, always start with a blank string. */
+    if ( string_type == TWC_SECURE )
+	*string = '\0';
+    
     /* Go to end of history list */
     if ( history != NULL )
     {
@@ -52,6 +66,8 @@ char    *history[];
     TIGNORE_EVENT(term,BUTTON_RELEASE);
     
     /* Display incoming string */
+    /* FIXME: Display in reverse video to indicate that it will be
+       blanked by the first keystroke */
     len = strlen(string);
     strcpy(temp, string);
 
@@ -86,14 +102,14 @@ char    *history[];
 			--first_pos;
 			tw_move_to(win,line,col);
 			for (p=first_pos; p<MIN(len,first_pos+field_width); ++p)
-			    tw_putc(win,temp[p]);
+			    tw_get_string_putc(win,temp[p],string_type);
 			tw_move_to(win,line,col+pos-first_pos);
 		    }
 		    else
 		    {
 			tw_move_to(win,line,col+pos-first_pos);
 			for (p=pos; p<MIN(len,first_pos+field_width); ++p)
-			    tw_putc(win,temp[p]);
+			    tw_get_string_putc(win,temp[p],string_type);
 			tw_putc(win,' ');
 			tw_move_to(win,line,col+pos-first_pos);
 		    }
@@ -113,7 +129,7 @@ char    *history[];
 			{
 			    --first_pos;
 			    for (p=first_pos; p<MIN(len,first_pos+field_width); ++p)
-				tw_putc(win,temp[p]);
+				tw_get_string_putc(win,temp[p],string_type);
 			    tw_move_to(win,line,col);
 			}
 		    }
@@ -130,7 +146,7 @@ char    *history[];
 			++first_pos;
 			tw_move_to(win,line,col);
 			for (p=pos-field_width; p<pos; ++p)
-			    tw_putc(win,temp[p]);
+			    tw_get_string_putc(win,temp[p],string_type);
 		    }
 		}
 		break;
@@ -138,7 +154,7 @@ char    *history[];
 	    case    '\t':   /* Filename completion */
 		break;
 		/*
-		snprintf(pattern,PATH_LEN,"%s*",temp);
+		snprintf(pattern,PATH_MAX,"%s*",temp);
 		glob(pattern,0,NULL,&glob_list);
 		if ( glob_list.gl_matchc != 1 )
 		    break;
@@ -150,7 +166,7 @@ char    *history[];
 		pos = first_pos = 0;
 		tw_move_to(win,line,col);
 		for (p=0; (p<field_width) && (p<len); ++p)
-		    tw_putc(win,temp[p]);
+		    tw_get_string_putc(win,temp[p],string_type);
 		tw_move_to(win,line,col);
 		break;
 	    case    '\005':     /* Ctrl-E = goto eoln */
@@ -161,7 +177,7 @@ char    *history[];
 		    first_pos = len - field_width;
 		    tw_move_to(win, line, col);
 		    for (p=first_pos; p < len; ++p)
-			tw_putc(win,temp[p]);
+			tw_get_string_putc(win,temp[p],string_type);
 		}
 		else
 		    tw_move_to(win, line, col + pos - first_pos);
@@ -223,14 +239,14 @@ char    *history[];
 			if ( pos < first_pos+field_width )
 			{
 			    for (p=pos; p<=MIN(len,first_pos+field_width-1); ++p)
-				tw_putc(win,temp[p]);
+				tw_get_string_putc(win,temp[p],string_type);
 			}
 			else    /* Scroll left and add new char */
 			{
 			    ++first_pos;
 			    tw_move_to(win,line,col);
 			    for (p=first_pos; p<=MIN(len,first_pos+field_width-1); ++p)
-				tw_putc(win,temp[p]);
+				tw_get_string_putc(win,temp[p],string_type);
 			}
 			++len;
 			++pos;
@@ -245,7 +261,7 @@ char    *history[];
     temp[len] = '\0';
     tw_move_to(win,line,col);
     for (p=0; p<MIN(len,field_width); ++p)
-	tw_putc(win,temp[p]);
+	tw_get_string_putc(win,temp[p],string_type);
     strcpy(string, temp);
     
     if ( history != NULL )

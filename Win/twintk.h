@@ -76,7 +76,7 @@ struct tw_win_st
 typedef enum { TWC_ENUM, TWC_STRING, TWC_CHAR, TWC_UCHAR, TWC_SHORT, TWC_USHORT,
 	    TWC_INT, TWC_UINT, TWC_LONG, TWC_ULONG, TWC_LONG_LONG, TWC_ULONG_LONG,
 	    TWC_FLOAT, TWC_DOUBLE, TWC_LONG_DOUBLE, TWC_MENU }   tw_data_t;
-typedef enum { TWC_VERBATIM, TWC_CAPS, TWC_UPPER_CASE, TWC_LOWER_CASE } tw_str_t;
+typedef enum { TWC_VERBATIM, TWC_CAPS, TWC_UPPER_CASE, TWC_LOWER_CASE, TWC_SECURE } tw_str_t;
 typedef union
 {
     char                *string_ptr;
@@ -152,7 +152,6 @@ typedef struct
 
 /* Constants for tw_get_pathname */
 #define TWC_SPEC_LEN        28
-#define TWC_FILENAME_LEN    FILENAME_MAX
 #define TWC_MAX_FILENAMES   2000
 #define TWC_ST_LEN          54
 #define TWC_MAX_SPECS       20

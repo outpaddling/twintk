@@ -34,8 +34,6 @@
 #define SUCCESS 0
 #define FAILURE -1
 
-#define MAXPATH 1024
-
 #ifndef MIN
 #define MIN(a,b)    ((a) < (b) ? (a) : (b))
 #endif
