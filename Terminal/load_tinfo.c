@@ -86,7 +86,14 @@ term_t *terminal;
     if ( (dir == NULL) || (fd == -1) )
     {
 	dir = TERMINFO_DIR;
-	sprintf(filename, "%s/%s/%c/%s", PREFIX, dir, *term_name, term_name);
+	/*
+	 * Work around case-insensitive filesystems by putting capitalized
+	 * terminal names in their own subdir
+	 */
+	if ( isupper(*term_name) )
+	    sprintf(filename, "%s/%s/CAPS/%c/%s", PREFIX, dir, *term_name, term_name);
+	else
+	    sprintf(filename, "%s/%s/%c/%s", PREFIX, dir, *term_name, term_name);
 	if ((fd = open(filename, O_RDONLY, 0)) == -1)
 	{
 	    snprintf(message,80,"load_tinfo(): Could not open %s",filename);
