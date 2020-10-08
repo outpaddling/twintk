@@ -45,9 +45,9 @@ char    new_str[];
 int     value, max_seq;
 
 {
-    int         s, c, diff = 1;
-    static int  count = 0;
-    char        temp[128];
+    int             s, c, diff = 1;
+    static int      count = 0;
+    unsigned char   temp[128];
 
     if (new_str == NULL)
 	return(NULL_SEQ_STR);
@@ -81,7 +81,7 @@ int     value, max_seq;
 	seq_table[++count].string = NULL;
 	return (0);
     }
-    viscpy(temp, new_str, 127);
+    viscpy(temp, (unsigned char *)new_str, 127);
     /*fprintf(stderr,"add_seq(): Warning: Sequence %s, key %d collided with existing key %d.\n",
 	new_str, value, seq_table[s].value);*/
     return(SEQ_COLLISION);  /* Diff == 0 (collision) */

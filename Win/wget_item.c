@@ -64,7 +64,7 @@ char    selected_text[];
 		    ch = mouse_action(win,menu_text,event);
 		    if (ch == TWC_OUTSIDE_WIN)
 		    {
-			if ( (event->type == BUTTON1_PRESS) )
+			if ( event->type == BUTTON1_PRESS )
 			    done = TRUE;
 		    }
 		    else if (ch != TWC_HIT_HLINE)

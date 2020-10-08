@@ -81,10 +81,17 @@ typedef union
 	char        *str;
 }       stack_frame;
 
-#define     MAX(a,b)    ((a) > (b) ? (a) : (b))
-#define     ABS(a)      ((a) > 0 ? (a) : -(a))
+#ifndef MAX
+#define MAX(a,b)    ((a) > (b) ? (a) : (b))
+#endif
 
+#ifndef ABS
+#define ABS(a)      ((a) > 0 ? (a) : -(a))
+#endif
+
+#ifndef CEIL
 #define CEIL(x) (int)((x)+1.0)
+#endif
 
 /* Control chars that are modified on output in OPOST mode */
 #define TW_EOT '\004'

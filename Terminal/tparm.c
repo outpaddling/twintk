@@ -175,7 +175,8 @@ char    *string;
 			break;
 
 		    case '^':
-			npush(npop() ^ npop());
+			number = npop() ^ npop();
+			npush(number);
 			break;
 
 		    case '=':
@@ -197,11 +198,13 @@ char    *string;
 			break;
 
 		    case '!':
-			npush(! npop());
+			number = npop();
+			npush(! number);
 			break;
 
 		    case '~':
-			npush(~ npop());
+			number = npop();
+			npush(~ number);
 			break;
 
 		    case 'i':

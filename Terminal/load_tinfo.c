@@ -35,6 +35,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <errno.h>
+#include <ctype.h>
 #include "twintk_term.h"
 
 
