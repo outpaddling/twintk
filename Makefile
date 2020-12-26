@@ -2,6 +2,7 @@
 SUBLIBS = Image/libimage.a Terminal/libdirect.a Win/libwin.a
 
 INSTALL         ?= install
+DESTDIR         ?= .
 PREFIX          ?= /usr/local
 LOCALBASE       ?= /usr/local
 MAKE            ?= make
@@ -27,15 +28,15 @@ Win/libwin.a:
 depend:
 
 install:        all
-	${MKDIR} -p ${PREFIX}/share/twintk
-	${MKDIR} -p ${PREFIX}/lib
-	${MKDIR} -p ${PREFIX}/include
-	${INSTALL} ${LIB} ${PREFIX}/lib
-	${INSTALL} Win/twintk.h ${PREFIX}/include
-	${INSTALL} Terminal/twintk_term.h ${PREFIX}/include
-	${INSTALL} Image/twintk_image.h ${PREFIX}/include
-	${INSTALL} Mouse/twintk_mouse.h ${PREFIX}/include
-	${CP} -R terminfo ${PREFIX}/share/twintk
+	${MKDIR} -p ${DESTDIR}${PREFIX}/share/twintk
+	${MKDIR} -p ${DESTDIR}${PREFIX}/lib
+	${MKDIR} -p ${DESTDIR}${PREFIX}/include
+	${INSTALL} ${LIB} ${DESTDIR}${PREFIX}/lib
+	${INSTALL} Win/twintk.h ${DESTDIR}${PREFIX}/include
+	${INSTALL} Terminal/twintk_term.h ${DESTDIR}${PREFIX}/include
+	${INSTALL} Image/twintk_image.h ${DESTDIR}${PREFIX}/include
+	${INSTALL} Mouse/twintk_mouse.h ${DESTDIR}${PREFIX}/include
+	${CP} -R terminfo ${DESTDIR}${PREFIX}/share/twintk
 
 clean:
 	(cd Image; ${MAKE} clean)
