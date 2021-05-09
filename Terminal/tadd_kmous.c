@@ -35,14 +35,14 @@ void    tadd_key_mouse(term_t *terminal)
     if ( ((terminal->key_mouse == NULL) || (*terminal->key_mouse == '\0')) &&
 	 (getenv("WINDOWID") != NULL) &&
 	 /* xterm, xterm-color, etc. */
-	 ((memicmp(terminal->term_type,"xterm",5) == 0) ||
-	  (memicmp(terminal->term_type,"rxvt",4) == 0) ||
+	 ((memcmp(terminal->term_type,"xterm",5) == 0) ||
+	  (memcmp(terminal->term_type,"rxvt",4) == 0) ||
 	  /* SCO ansi */
-	  (memicmp(terminal->term_type,"ansi",4) == 0) ||
+	  (memcmp(terminal->term_type,"ansi",4) == 0) ||
 	  /* scoansi and scocons */
-	  (memicmp(terminal->term_type,"sco",3) == 0 ) ||
+	  (memcmp(terminal->term_type,"sco",3) == 0 ) ||
 	  /* vt100, vt102, vt200, etc. */
-	  (memicmp(terminal->term_type,"vt",2) == 0)) )
+	  (memcmp(terminal->term_type,"vt",2) == 0)) )
     {
 	terminal->get_mouse = "\033[?%p1%dh";
 	terminal->key_mouse = "\033[M";
