@@ -29,7 +29,7 @@
 #include <fcntl.h>
 #include <signal.h>
 #include <termios.h>
-#include "bacon.h"
+#include <xtend.h>
 #include "twintk_mouse.h"
 
 int     open_mouse(mouse,device,type)

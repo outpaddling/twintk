@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <bacon.h>
+#include <xtend.h>
 #include "twintk.h"
 
 int     tw_get_enum(win, string, list, str_max, event)

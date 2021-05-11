@@ -7,7 +7,7 @@ tmouse
 -u
 
 -o
--L$$INSTALL_ROOT/lib -ltwin -lbacon
+-L$$INSTALL_ROOT/lib -ltwin -lxtend
 cc
 c++
 pc

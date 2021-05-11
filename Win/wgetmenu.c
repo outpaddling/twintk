@@ -1,7 +1,7 @@
 #include <string.h>
 #include <ctype.h>
+#include <xtend.h>
 #include "twintk.h"
-#include "bacon.h"
 
 #define LINE_POS(c) (1 + ((c)-first_str) % (TW_LINES(win)-2))
 #define COL_POS(c)  (2 + ((c)-first_str) / (TW_LINES(win)-2) * (maxlen+1))

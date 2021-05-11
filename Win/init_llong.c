@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <bacon.h>
+#include <xtend.h>
 #include "twintk.h"
 
 void    tw_init_llong(tw_panel_t *panel, int line, int col, long long min,
@@ -21,6 +21,6 @@ void    tw_init_llong(tw_panel_t *panel, int line, int col, long long min,
     field->help = help;
     field->data.llong_ptr = llong_ptr;
     /* FIXME: need num_size that takes long long */
-    field->field_len = MAX(num_size(max),num_size(min));
+    field->field_len = MAX(num_size(max,10),num_size(min,10));
 }
 

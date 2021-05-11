@@ -356,7 +356,6 @@ int mouse_action(win_t *win, char *menu_text[], event_t *event);
 /* wget_path.c */
 int tw_get_pathname(win_t *win, char *file_name, char *file_spec);
 int list_files(char *names[], char *pattern, int file_type, size_t max_names);
-int strptrcmp(char **p1, char **p2);
 /* wget_resp.c */
 int tw_get_response(win_t *win, char valid[]);
 /* wgetc.c */

@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <bacon.h>
+#include <xtend.h>
 #include "twintk.h"
 
 void    tw_init_int(tw_panel_t *panel, int line, int col, int min, int max,
@@ -21,7 +21,7 @@ void    tw_init_int(tw_panel_t *panel, int line, int col, int min, int max,
 
     field->data_type = TWC_INT;
     field->data.int_ptr = int_ptr;
-    field->field_len = MAX(num_size((long)max),num_size((long)min));
+    field->field_len = MAX(num_size((long)max,10),num_size((long)min,10));
 }
 
 
@@ -45,6 +45,6 @@ void    tw_init_uint(tw_panel_t *panel, int line, int col,
     field->data_type = TWC_UINT;
     field->data.uint_ptr = uint_ptr;
     /* FIXME: Need unsigned num_size */
-    field->field_len = MAX(num_size(max),num_size(min));
+    field->field_len = MAX(num_size(max,10),num_size(min,10));
 }
 

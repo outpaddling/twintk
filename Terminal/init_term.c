@@ -33,7 +33,7 @@
 #include <sys/types.h>
 #include <sys/ioctl.h>
 #include <sysexits.h>
-#include <bacon.h>
+#include <xtend.h>
 #include "twintk_term.h"
 
 term_t *init_term(fpin,fpout,fperr,termtype,flags)

@@ -27,8 +27,8 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <xtend.h>
 #include "direct.h"
-#include "bacon.h"
 
 #define     MAXLEN  80
 

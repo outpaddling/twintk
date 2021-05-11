@@ -2,33 +2,33 @@ del_win.o: del_win.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} del_win.c
 
-init_double.o: init_double.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+init_double.o: init_double.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_double.c
 
 init_enum.o: init_enum.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_enum.c
 
-init_int.o: init_int.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+init_int.o: init_int.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_int.c
 
-init_ldouble.o: init_ldouble.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+init_ldouble.o: init_ldouble.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_ldouble.c
 
-init_llong.o: init_llong.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+init_llong.o: init_llong.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_llong.c
 
-init_long.o: init_long.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+init_long.o: init_long.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_long.c
 
 init_menu.o: init_menu.c twintk.h ../Terminal/twintk_term.h \
@@ -47,9 +47,9 @@ panel_check.o: panel_check.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} panel_check.c
 
-print_cur.o: print_cur.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+print_cur.o: print_cur.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} print_cur.c
 
 sub_win.o: sub_win.c twintk.h ../Terminal/twintk_term.h \
@@ -96,9 +96,9 @@ wget_item.o: wget_item.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wget_item.c
 
-wget_path.o: wget_path.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+wget_path.o: wget_path.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wget_path.c
 
 wget_resp.o: wget_resp.c twintk.h ../Terminal/twintk_term.h \
@@ -109,9 +109,9 @@ wgetc.o: wgetc.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wgetc.c
 
-wgetenum.o: wgetenum.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+wgetenum.o: wgetenum.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wgetenum.c
 
 wgetevent.o: wgetevent.c twintk.h ../Terminal/twintk_term.h \
@@ -122,23 +122,23 @@ wgetfloat.o: wgetfloat.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wgetfloat.c
 
-wgetint.o: wgetint.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+wgetint.o: wgetint.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wgetint.c
 
-wgetmenu.o: wgetmenu.c twintk.h ../Terminal/twintk_term.h \
-  ../Image/twintk_image.h ../Mouse/twintk_mouse.h \
-  /usr/local/include/bacon.h
+wgetmenu.o: wgetmenu.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wgetmenu.c
 
 wgetseq.o: wgetseq.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wgetseq.c
 
-wgetstring.o: wgetstring.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+wgetstring.o: wgetstring.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} wgetstring.c
 
 whigh_print.o: whigh_print.c twintk.h ../Terminal/twintk_term.h \
@@ -157,9 +157,9 @@ winn_border.o: winn_border.c twintk.h ../Terminal/twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} winn_border.c
 
-winput_pan.o: winput_pan.c /usr/local/include/bacon.h twintk.h \
-  ../Terminal/twintk_term.h ../Image/twintk_image.h \
-  ../Mouse/twintk_mouse.h
+winput_pan.o: winput_pan.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk.h ../Terminal/twintk_term.h \
+  ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} winput_pan.c
 
 winsert_ch.o: winsert_ch.c twintk.h ../Terminal/twintk_term.h \

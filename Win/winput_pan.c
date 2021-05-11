@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <bacon.h>
+#include <xtend.h>
 #include "twintk.h"
 
 #define GOTO_FIELD(win,field)\

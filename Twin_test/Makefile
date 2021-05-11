@@ -87,7 +87,7 @@ CPP     ?= cpp
 
 INCLUDES+= -I${LOCALBASE}/include
 CFLAGS  += ${INCLUDES}
-LFLAGS1 += -L${LOCALBASE}/lib -ltwintk -lbacon
+LFLAGS1 += -L${LOCALBASE}/lib -ltwintk -lxtend
 
 ############################################################################
 # Assume first command in PATH.  Override with full pathnames if necessary.

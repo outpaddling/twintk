@@ -4,7 +4,8 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <dirent.h>
-#include <bacon.h>
+#include <sys/param.h>
+#include <xtend.h>
 #include "twintk.h"
 
 /****************************************************
@@ -156,7 +157,7 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
     if ( (*temp_name == '\0') || (TW_EXIT_KEY(status) == TWC_INPUT_CANCEL) )
 	chdir(old_dir);
     else
-	meta_chars(file_name,temp_name,PATH_MAX);
+	strshellcpy(file_name,temp_name,PATH_MAX);
     tw_del_win(&dirs_win);
     tw_del_win(&names_win);
     return status;
@@ -215,12 +216,3 @@ size_t  max_names;
     }
     return maxlen;
 }
-
-
-int     strptrcmp(p1,p2)
-char    **p1,**p2;
-
-{
-    return strcmp(*p1,*p2);
-}
-

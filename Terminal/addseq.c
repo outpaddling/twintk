@@ -36,7 +36,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include "bacon.h"
+#include <xtend.h>
 #include "twintk_term.h"
 
 int     add_seq(seq_table, new_str, value, max_seq)

@@ -7,7 +7,7 @@ CFLAGS  += -Wall -I${LOCALBASE}/include -I.
 all:    tmouse
 
 tmouse: $(OBJ)
-	$(CC) -o tmouse $(OBJ) -L.. -ltwin -L${LOCALBASE}/lib -lbacon
+	$(CC) -o tmouse $(OBJ) -L.. -ltwin -L${LOCALBASE}/lib -lxtend
 
 %.o:    %.c ../Image/image.h ../Terminal/direct.h ../Windows/windows.h
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@

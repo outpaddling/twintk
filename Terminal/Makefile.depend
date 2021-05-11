@@ -1,4 +1,5 @@
-addseq.o: addseq.c /usr/local/include/bacon.h twintk_term.h \
+addseq.o: addseq.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} addseq.c
 
@@ -18,7 +19,8 @@ init_names.o: init_names.c twintk_term.h ../Image/twintk_image.h \
   ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_names.c
 
-init_term.o: init_term.c /usr/local/include/bacon.h twintk_term.h \
+init_term.o: init_term.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} init_term.c
 
@@ -30,7 +32,8 @@ raw_print.o: raw_print.c twintk_term.h ../Image/twintk_image.h \
   ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} raw_print.c
 
-tadd_kmous.o: tadd_kmous.c /usr/local/include/bacon.h twintk_term.h \
+tadd_kmous.o: tadd_kmous.c /usr/local/include/xtend.h \
+  /usr/local/include/xtend-protos.h twintk_term.h \
   ../Image/twintk_image.h ../Mouse/twintk_mouse.h
 	${CC} -c ${CFLAGS} tadd_kmous.c
 
