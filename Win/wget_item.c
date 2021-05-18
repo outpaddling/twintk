@@ -1,5 +1,6 @@
 #include <string.h>
 #include <ctype.h>
+#include <xtend.h>
 #include "twintk.h"
 
 #define MOVE_UP     '\003'

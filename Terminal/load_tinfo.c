@@ -36,6 +36,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <ctype.h>
+#include <xtend.h>	// strlcpy() on Linux
 #include "twintk_term.h"
 
 
