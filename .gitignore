@@ -1,0 +1,3 @@
+*.o
+libtwintk.a
+.*.bak

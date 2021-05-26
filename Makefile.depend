@@ -1,0 +1,66 @@
+del_image.o: Image/del_image.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/del_image.c
+
+iaddc.o: Image/iaddc.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iaddc.c
+
+ichange_sreg.o: Image/ichange_sreg.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/ichange_sreg.c
+
+iclear_eol.o: Image/iclear_eol.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iclear_eol.c
+
+iclear_eos.o: Image/iclear_eos.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iclear_eos.c
+
+iclr_image.o: Image/iclr_image.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iclr_image.c
+
+idelete_ch.o: Image/idelete_ch.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/idelete_ch.c
+
+idump.o: Image/idump.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/idump.c
+
+iinsert_ch.o: Image/iinsert_ch.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iinsert_ch.c
+
+imove_down.o: Image/imove_down.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/imove_down.c
+
+imove_left.o: Image/imove_left.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/imove_left.c
+
+imove_right.o: Image/imove_right.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/imove_right.c
+
+imove_to.o: Image/imove_to.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/imove_to.c
+
+imove_up.o: Image/imove_up.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/imove_up.c
+
+inext_line.o: Image/inext_line.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/inext_line.c
+
+init_image.o: Image/init_image.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/init_image.c
+
+iputc.o: Image/iputc.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iputc.c
+
+iputs.o: Image/iputs.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iputs.c
+
+iscroll_for.o: Image/iscroll_for.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iscroll_for.c
+
+iscroll_rev.o: Image/iscroll_rev.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/iscroll_rev.c
+
+new_image.o: Image/new_image.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/new_image.c
+
+sub_image.o: Image/sub_image.c Image/twintk_image.h
+	${CC} -c ${CFLAGS} Image/sub_image.c
+
