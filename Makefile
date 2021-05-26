@@ -68,11 +68,13 @@ ${SLIB}: ${OBJ}
 	ar r ${SLIB} ${OBJ}
 	ranlib ${SLIB}
 
+include Makefile.depend
+
 depend:
 	rm -f Makefile.depend
-	for file in Image/*.c; do \
+	for file in Image/*.c Terminal/*.c Win/*.c; do \
 	    ${CPP} ${INCLUDES} -MM $${file} >> Makefile.depend; \
-	    ${PRINTF} "\t\$${CC} -c \$${CFLAGS} $${file}\n\n" >> Makefile.depend; \
+	    ${PRINTF} "\t\$${CC} -c \$${CFLAGS} $${file} -o $${file%.c}.o\n\n" >> Makefile.depend; \
 	done
 
 install:        all

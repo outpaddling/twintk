@@ -1,66 +1,578 @@
 del_image.o: Image/del_image.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/del_image.c
+	${CC} -c ${CFLAGS} Image/del_image.c -o Image/del_image.o
 
 iaddc.o: Image/iaddc.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iaddc.c
+	${CC} -c ${CFLAGS} Image/iaddc.c -o Image/iaddc.o
 
 ichange_sreg.o: Image/ichange_sreg.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/ichange_sreg.c
+	${CC} -c ${CFLAGS} Image/ichange_sreg.c -o Image/ichange_sreg.o
 
 iclear_eol.o: Image/iclear_eol.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iclear_eol.c
+	${CC} -c ${CFLAGS} Image/iclear_eol.c -o Image/iclear_eol.o
 
 iclear_eos.o: Image/iclear_eos.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iclear_eos.c
+	${CC} -c ${CFLAGS} Image/iclear_eos.c -o Image/iclear_eos.o
 
 iclr_image.o: Image/iclr_image.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iclr_image.c
+	${CC} -c ${CFLAGS} Image/iclr_image.c -o Image/iclr_image.o
 
 idelete_ch.o: Image/idelete_ch.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/idelete_ch.c
+	${CC} -c ${CFLAGS} Image/idelete_ch.c -o Image/idelete_ch.o
 
 idump.o: Image/idump.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/idump.c
+	${CC} -c ${CFLAGS} Image/idump.c -o Image/idump.o
 
 iinsert_ch.o: Image/iinsert_ch.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iinsert_ch.c
+	${CC} -c ${CFLAGS} Image/iinsert_ch.c -o Image/iinsert_ch.o
 
 imove_down.o: Image/imove_down.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/imove_down.c
+	${CC} -c ${CFLAGS} Image/imove_down.c -o Image/imove_down.o
 
 imove_left.o: Image/imove_left.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/imove_left.c
+	${CC} -c ${CFLAGS} Image/imove_left.c -o Image/imove_left.o
 
 imove_right.o: Image/imove_right.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/imove_right.c
+	${CC} -c ${CFLAGS} Image/imove_right.c -o Image/imove_right.o
 
 imove_to.o: Image/imove_to.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/imove_to.c
+	${CC} -c ${CFLAGS} Image/imove_to.c -o Image/imove_to.o
 
 imove_up.o: Image/imove_up.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/imove_up.c
+	${CC} -c ${CFLAGS} Image/imove_up.c -o Image/imove_up.o
 
 inext_line.o: Image/inext_line.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/inext_line.c
+	${CC} -c ${CFLAGS} Image/inext_line.c -o Image/inext_line.o
 
 init_image.o: Image/init_image.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/init_image.c
+	${CC} -c ${CFLAGS} Image/init_image.c -o Image/init_image.o
 
 iputc.o: Image/iputc.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iputc.c
+	${CC} -c ${CFLAGS} Image/iputc.c -o Image/iputc.o
 
 iputs.o: Image/iputs.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iputs.c
+	${CC} -c ${CFLAGS} Image/iputs.c -o Image/iputs.o
 
 iscroll_for.o: Image/iscroll_for.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iscroll_for.c
+	${CC} -c ${CFLAGS} Image/iscroll_for.c -o Image/iscroll_for.o
 
 iscroll_rev.o: Image/iscroll_rev.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/iscroll_rev.c
+	${CC} -c ${CFLAGS} Image/iscroll_rev.c -o Image/iscroll_rev.o
 
 new_image.o: Image/new_image.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/new_image.c
+	${CC} -c ${CFLAGS} Image/new_image.c -o Image/new_image.o
 
 sub_image.o: Image/sub_image.c Image/twintk_image.h
-	${CC} -c ${CFLAGS} Image/sub_image.c
+	${CC} -c ${CFLAGS} Image/sub_image.c -o Image/sub_image.o
+
+addseq.o: Terminal/addseq.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/addseq.c -o Terminal/addseq.o
+
+del_term.o: Terminal/del_term.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/del_term.c -o Terminal/del_term.o
+
+getseq.o: Terminal/getseq.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/getseq.c -o Terminal/getseq.o
+
+init_keymap.o: Terminal/init_keymap.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/init_keymap.c -o Terminal/init_keymap.o
+
+init_names.o: Terminal/init_names.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/init_names.c -o Terminal/init_names.o
+
+init_term.o: Terminal/init_term.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/init_term.c -o Terminal/init_term.o
+
+load_tinfo.o: Terminal/load_tinfo.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/load_tinfo.c -o Terminal/load_tinfo.o
+
+raw_print.o: Terminal/raw_print.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/raw_print.c -o Terminal/raw_print.o
+
+tadd_kmous.o: Terminal/tadd_kmous.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tadd_kmous.c -o Terminal/tadd_kmous.o
+
+taddc.o: Terminal/taddc.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/taddc.c -o Terminal/taddc.o
+
+taddseq.o: Terminal/taddseq.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/taddseq.c -o Terminal/taddseq.o
+
+tcbreak_mode.o: Terminal/tcbreak_mode.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tcbreak_mode.c -o Terminal/tcbreak_mode.o
+
+tchange_sreg.o: Terminal/tchange_sreg.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tchange_sreg.c -o Terminal/tchange_sreg.o
+
+tclear_eol.o: Terminal/tclear_eol.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tclear_eol.c -o Terminal/tclear_eol.o
+
+tclear_eos.o: Terminal/tclear_eos.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tclear_eos.c -o Terminal/tclear_eos.o
+
+tclr_screen.o: Terminal/tclr_screen.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tclr_screen.c -o Terminal/tclr_screen.o
+
+tdelete_ch.o: Terminal/tdelete_ch.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tdelete_ch.c -o Terminal/tdelete_ch.o
+
+tdelete_line.o: Terminal/tdelete_line.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tdelete_line.c -o Terminal/tdelete_line.o
+
+tdump.o: Terminal/tdump.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tdump.c -o Terminal/tdump.o
+
+tget_resp.o: Terminal/tget_resp.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tget_resp.c -o Terminal/tget_resp.o
+
+tgetc.o: Terminal/tgetc.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tgetc.c -o Terminal/tgetc.o
+
+tgetevent.o: Terminal/tgetevent.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tgetevent.c -o Terminal/tgetevent.o
+
+tgetmouse.o: Terminal/tgetmouse.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tgetmouse.c -o Terminal/tgetmouse.o
+
+tgets.o: Terminal/tgets.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tgets.c -o Terminal/tgets.o
+
+tgetseq.o: Terminal/tgetseq.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tgetseq.c -o Terminal/tgetseq.o
+
+thome.o: Terminal/thome.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/thome.c -o Terminal/thome.o
+
+tinsert_ch.o: Terminal/tinsert_ch.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tinsert_ch.c -o Terminal/tinsert_ch.o
+
+tinsert_line.o: Terminal/tinsert_line.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tinsert_line.c -o Terminal/tinsert_line.o
+
+tinsert_mode.o: Terminal/tinsert_mode.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tinsert_mode.c -o Terminal/tinsert_mode.o
+
+tmousesrvr.o: Terminal/tmousesrvr.c
+	${CC} -c ${CFLAGS} Terminal/tmousesrvr.c -o Terminal/tmousesrvr.o
+
+tmove_down.o: Terminal/tmove_down.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tmove_down.c -o Terminal/tmove_down.o
+
+tmove_left.o: Terminal/tmove_left.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tmove_left.c -o Terminal/tmove_left.o
+
+tmove_right.o: Terminal/tmove_right.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tmove_right.c -o Terminal/tmove_right.o
+
+tmove_to.o: Terminal/tmove_to.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tmove_to.c -o Terminal/tmove_to.o
+
+tmove_up.o: Terminal/tmove_up.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tmove_up.c -o Terminal/tmove_up.o
+
+tparm.o: Terminal/tparm.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tparm.c -o Terminal/tparm.o
+
+tpop_tty.o: Terminal/tpop_tty.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tpop_tty.c -o Terminal/tpop_tty.o
+
+tprintf.o: Terminal/tprintf.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tprintf.c -o Terminal/tprintf.o
+
+tpush_event.o: Terminal/tpush_event.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tpush_event.c -o Terminal/tpush_event.o
+
+tpush_tty.o: Terminal/tpush_tty.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tpush_tty.c -o Terminal/tpush_tty.o
+
+tputc.o: Terminal/tputc.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tputc.c -o Terminal/tputc.o
+
+tputs.o: Terminal/tputs.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tputs.c -o Terminal/tputs.o
+
+traw_mode.o: Terminal/traw_mode.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/traw_mode.c -o Terminal/traw_mode.o
+
+tredraw_line.o: Terminal/tredraw_line.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tredraw_line.c -o Terminal/tredraw_line.o
+
+tredraw.o: Terminal/tredraw.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tredraw.c -o Terminal/tredraw.o
+
+tscroll_for.o: Terminal/tscroll_for.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tscroll_for.c -o Terminal/tscroll_for.o
+
+tscroll_rev.o: Terminal/tscroll_rev.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tscroll_rev.c -o Terminal/tscroll_rev.o
+
+tset_bg.o: Terminal/tset_bg.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tset_bg.c -o Terminal/tset_bg.o
+
+tset_dim.o: Terminal/tset_dim.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tset_dim.c -o Terminal/tset_dim.o
+
+tset_fg.o: Terminal/tset_fg.c Terminal/twintk_term.h Image/twintk_image.h \
+  Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tset_fg.c -o Terminal/tset_fg.o
+
+tset_modes.o: Terminal/tset_modes.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tset_modes.c -o Terminal/tset_modes.o
+
+tset_start.o: Terminal/tset_start.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tset_start.c -o Terminal/tset_start.o
+
+tset_tty.o: Terminal/tset_tty.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tset_tty.c -o Terminal/tset_tty.o
+
+tunset_tty.o: Terminal/tunset_tty.c Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Terminal/tunset_tty.c -o Terminal/tunset_tty.o
+
+del_win.o: Win/del_win.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/del_win.c -o Win/del_win.o
+
+init_double.o: Win/init_double.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_double.c -o Win/init_double.o
+
+init_enum.o: Win/init_enum.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_enum.c -o Win/init_enum.o
+
+init_int.o: Win/init_int.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_int.c -o Win/init_int.o
+
+init_ldouble.o: Win/init_ldouble.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_ldouble.c -o Win/init_ldouble.o
+
+init_llong.o: Win/init_llong.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_llong.c -o Win/init_llong.o
+
+init_long.o: Win/init_long.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_long.c -o Win/init_long.o
+
+init_menu.o: Win/init_menu.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_menu.c -o Win/init_menu.o
+
+init_string.o: Win/init_string.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/init_string.c -o Win/init_string.o
+
+new_win.o: Win/new_win.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/new_win.c -o Win/new_win.o
+
+panel_check.o: Win/panel_check.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/panel_check.c -o Win/panel_check.o
+
+print_cur.o: Win/print_cur.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/print_cur.c -o Win/print_cur.o
+
+sub_win.o: Win/sub_win.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/sub_win.c -o Win/sub_win.o
+
+waddstr.o: Win/waddstr.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/waddstr.c -o Win/waddstr.o
+
+wblank.o: Win/wblank.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wblank.c -o Win/wblank.o
+
+wbut_resp.o: Win/wbut_resp.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wbut_resp.c -o Win/wbut_resp.o
+
+wclear_eol.o: Win/wclear_eol.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wclear_eol.c -o Win/wclear_eol.o
+
+wclear_eow.o: Win/wclear_eow.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wclear_eow.c -o Win/wclear_eow.o
+
+wclear.o: Win/wclear.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wclear.c -o Win/wclear.o
+
+wdelete_ch.o: Win/wdelete_ch.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wdelete_ch.c -o Win/wdelete_ch.o
+
+wdelete_line.o: Win/wdelete_line.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wdelete_line.c -o Win/wdelete_line.o
+
+wdump.o: Win/wdump.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wdump.c -o Win/wdump.o
+
+wget_item.o: Win/wget_item.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wget_item.c -o Win/wget_item.o
+
+wget_path.o: Win/wget_path.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wget_path.c -o Win/wget_path.o
+
+wget_resp.o: Win/wget_resp.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wget_resp.c -o Win/wget_resp.o
+
+wgetc.o: Win/wgetc.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetc.c -o Win/wgetc.o
+
+wgetenum.o: Win/wgetenum.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetenum.c -o Win/wgetenum.o
+
+wgetevent.o: Win/wgetevent.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetevent.c -o Win/wgetevent.o
+
+wgetfloat.o: Win/wgetfloat.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetfloat.c -o Win/wgetfloat.o
+
+wgetint.o: Win/wgetint.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetint.c -o Win/wgetint.o
+
+wgetmenu.o: Win/wgetmenu.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetmenu.c -o Win/wgetmenu.o
+
+wgetseq.o: Win/wgetseq.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetseq.c -o Win/wgetseq.o
+
+wgetstring.o: Win/wgetstring.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wgetstring.c -o Win/wgetstring.o
+
+whigh_print.o: Win/whigh_print.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/whigh_print.c -o Win/whigh_print.o
+
+whl_menu.o: Win/whl_menu.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/whl_menu.c -o Win/whl_menu.o
+
+whome.o: Win/whome.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/whome.c -o Win/whome.o
+
+winn_border.o: Win/winn_border.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/winn_border.c -o Win/winn_border.o
+
+winput_pan.o: Win/winput_pan.c ../local/include/xtend.h \
+  ../local/include/xtend-protos.h Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/winput_pan.c -o Win/winput_pan.o
+
+winsert_ch.o: Win/winsert_ch.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/winsert_ch.c -o Win/winsert_ch.o
+
+winsert_line.o: Win/winsert_line.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/winsert_line.c -o Win/winsert_line.o
+
+wlist_win.o: Win/wlist_win.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wlist_win.c -o Win/wlist_win.o
+
+wmenu.o: Win/wmenu.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmenu.c -o Win/wmenu.o
+
+wmouseinwin.o: Win/wmouseinwin.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmouseinwin.c -o Win/wmouseinwin.o
+
+wmove_down.o: Win/wmove_down.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmove_down.c -o Win/wmove_down.o
+
+wmove_left.o: Win/wmove_left.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmove_left.c -o Win/wmove_left.o
+
+wmove_right.o: Win/wmove_right.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmove_right.c -o Win/wmove_right.o
+
+wmove_to.o: Win/wmove_to.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmove_to.c -o Win/wmove_to.o
+
+wmove_up.o: Win/wmove_up.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmove_up.c -o Win/wmove_up.o
+
+wmsg_win.o: Win/wmsg_win.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wmsg_win.c -o Win/wmsg_win.o
+
+wout_border.o: Win/wout_border.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wout_border.c -o Win/wout_border.o
+
+wprint_cen.o: Win/wprint_cen.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wprint_cen.c -o Win/wprint_cen.o
+
+wprintat.o: Win/wprintat.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wprintat.c -o Win/wprintat.o
+
+wprintf.o: Win/wprintf.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wprintf.c -o Win/wprintf.o
+
+wputc.o: Win/wputc.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wputc.c -o Win/wputc.o
+
+wputs.o: Win/wputs.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wputs.c -o Win/wputs.o
+
+wredraw_all.o: Win/wredraw_all.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wredraw_all.c -o Win/wredraw_all.o
+
+wredraw_line.o: Win/wredraw_line.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wredraw_line.c -o Win/wredraw_line.o
+
+wredraw.o: Win/wredraw.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wredraw.c -o Win/wredraw.o
+
+wresp_win.o: Win/wresp_win.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wresp_win.c -o Win/wresp_win.o
+
+wrestore_lin.o: Win/wrestore_lin.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wrestore_lin.c -o Win/wrestore_lin.o
+
+wrestore.o: Win/wrestore.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wrestore.c -o Win/wrestore.o
+
+wscroll_bar.o: Win/wscroll_bar.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wscroll_bar.c -o Win/wscroll_bar.o
+
+wscroll_for.o: Win/wscroll_for.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wscroll_for.c -o Win/wscroll_for.o
+
+wscroll_rev.o: Win/wscroll_rev.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wscroll_rev.c -o Win/wscroll_rev.o
+
+wset_bg.o: Win/wset_bg.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wset_bg.c -o Win/wset_bg.o
+
+wset_fg.o: Win/wset_fg.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wset_fg.c -o Win/wset_fg.o
+
+wset_wattr.o: Win/wset_wattr.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wset_wattr.c -o Win/wset_wattr.o
+
+wshadow.o: Win/wshadow.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wshadow.c -o Win/wshadow.o
+
+wsync_modes.o: Win/wsync_modes.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wsync_modes.c -o Win/wsync_modes.o
+
+wunlist_win.o: Win/wunlist_win.c Win/twintk.h Terminal/twintk_term.h \
+  Image/twintk_image.h Mouse/twintk_mouse.h
+	${CC} -c ${CFLAGS} Win/wunlist_win.c -o Win/wunlist_win.o
 
