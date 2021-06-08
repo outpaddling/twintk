@@ -137,8 +137,9 @@ char    *string;
 			break;
 
 		    case '+':
-			number = npop() + npop();
-			npush(number);
+			x = npop();
+			y = npop();
+			npush(x + y);
 			break;
 
 		    case '-':
@@ -148,8 +149,9 @@ char    *string;
 			break;
 
 		    case '*':
-			number = npop() * npop();
-			npush(number);
+			x = npop();
+			y = npop();
+			npush(x * y);
 			break;
 
 		    case '/':
@@ -165,18 +167,22 @@ char    *string;
 			break;
 
 		    case '&':
-			number = npop() * npop();
-			npush(number);
+			// FIXME: Why was this using *?
+			x = npop();
+			y = npop();
+			npush(x & y);
 			break;
 
 		    case '|':
-			number = npop() | npop();
-			npush(number);
+			x = npop();
+			y = npop();
+			npush(x | y);
 			break;
 
 		    case '^':
-			number = npop() ^ npop();
-			npush(number);
+			x = npop();
+			y = npop();
+			npush(x ^ y);
 			break;
 
 		    case '=':
