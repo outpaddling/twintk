@@ -3,12 +3,8 @@
 #include <xtend.h>
 #include "twintk.h"
 
-int     tw_get_enum(win, string, list, str_max, event)
-win_t   *win;
-char   *string;
-char    *list[];
-int str_max;
-event_t *event;
+int     tw_get_enum(win_t *win, char *string, char *list[],
+		    int str_max, event_t *event)
 
 {
     int     c = 0, ch, x, y, cooked, last_item;
@@ -16,7 +12,8 @@ event_t *event;
     /* Find current string value */
     if ( *string == '\0' )
     {
-	strcpy(string,list[0]);
+	// FIXME: Does str_max apply to string?
+	strlcpy(string,list[0],str_max);
     }
     else
     {

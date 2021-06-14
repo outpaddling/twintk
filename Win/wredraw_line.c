@@ -19,7 +19,7 @@ int    line,leftcol,rightcol;
 
 {
     unsigned char        *char_ptr,*last_char_ptr;
-    int         tcur_mode,tcur_fg,tcur_bg,col,color;
+    int         tcur_mode,tcur_fg,tcur_bg,color;
     attr_t      *attr_ptr;
     term_t      *terminal;
     
@@ -32,7 +32,7 @@ int    line,leftcol,rightcol;
     attr_ptr = &TW_ATTR(win,line,leftcol);
     char_ptr = &TW_CHAR(win,line,leftcol);
     last_char_ptr = &TW_CHAR(win,line,rightcol);
-    col = leftcol;
+    //col = leftcol;
     
     tw_move_to(win,line,leftcol);
     while ( char_ptr <= last_char_ptr )

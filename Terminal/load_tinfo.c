@@ -36,7 +36,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <ctype.h>
-#include <xtend.h>	// strlcpy() on Linux
+#include <xtend.h>      // strlcpy() on Linux
 #include "twintk_term.h"
 
 
@@ -80,7 +80,7 @@ term_t *terminal;
     dir = strtok(temp_path,":");
     while ( (dir != NULL) && (fd == -1) )
     {
-	sprintf(filename, "%s/%c/%s", dir, *term_name, term_name);
+	snprintf(filename, PATH_MAX, "%s/%c/%s", dir, *term_name, term_name);
 	if ( (fd = open(filename, O_RDONLY, 0)) == -1 )
 	    dir = strtok(NULL,":");
     }
@@ -93,9 +93,9 @@ term_t *terminal;
 	 * terminal names in their own subdir
 	 */
 	if ( isupper(*term_name) )
-	    sprintf(filename, "%s/%s/CAPS/%c/%s", PREFIX, dir, *term_name, term_name);
+	    snprintf(filename, PATH_MAX, "%s/%s/CAPS/%c/%s", PREFIX, dir, *term_name, term_name);
 	else
-	    sprintf(filename, "%s/%s/%c/%s", PREFIX, dir, *term_name, term_name);
+	    snprintf(filename, PATH_MAX, "%s/%s/%c/%s", PREFIX, dir, *term_name, term_name);
 	if ((fd = open(filename, O_RDONLY, 0)) == -1)
 	{
 	    snprintf(message,80,"load_tinfo(): Could not open %s",filename);

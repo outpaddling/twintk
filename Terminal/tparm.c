@@ -3,6 +3,8 @@
 #include <stdarg.h>
 #include "twintk_term.h"
 
+#define BUFFER_LEN  256
+
 #ifdef __STDC__
 char    *tparm(char *string,...)
 #else
@@ -13,7 +15,7 @@ char    *string;
 {
 	int             len, number, level, x, y, stack_index = 0, i;
 	stack_frame     stack[STACKSIZE];
-	static  char    buffer[256];    /* Must be static - address returned */
+	static  char    buffer[BUFFER_LEN];    /* Must be static - address returned */
 	static  int     param[10];
 	static  char    *bufptr;
 	static  int     variable[26];
@@ -49,7 +51,8 @@ char    *string;
 			break;
 
 		    case 'd':
-			sprintf(bufptr, "%d", npop());
+			snprintf(bufptr, BUFFER_LEN - (bufptr - buffer),
+				 "%d", npop());
 			bufptr += strlen(bufptr);
 			break;
 
@@ -59,9 +62,11 @@ char    *string;
 			if ((len == '2'  ||  len == '3')  &&  *++string == 'd')
 			{
 			    if (len == '2')
-				sprintf(bufptr, "%02d", npop());
+				snprintf(bufptr, BUFFER_LEN - (bufptr - buffer),
+					 "%02d", npop());
 			    else
-				sprintf(bufptr, "%03d", npop());
+				snprintf(bufptr, BUFFER_LEN - (bufptr - buffer),
+					 "%03d", npop());
 			    
 			    bufptr += strlen(bufptr);
 			}
@@ -71,7 +76,8 @@ char    *string;
 			string++;
 			if (*string == 'd')
 			{
-			    sprintf(bufptr, "%2d", npop());
+			    snprintf(bufptr, BUFFER_LEN - (bufptr - buffer),
+				     "%2d", npop());
 			    bufptr += strlen(bufptr);
 			}
 			break;
@@ -80,7 +86,8 @@ char    *string;
 			string++;
 			if (*string == 'd')
 			{
-			    sprintf(bufptr, "%3d", npop());
+			    snprintf(bufptr, BUFFER_LEN - (bufptr - buffer),
+				     "%3d", npop());
 			    bufptr += strlen(bufptr);
 			}
 			break;
@@ -95,7 +102,7 @@ char    *string;
 			break;
 
 		    case 's':
-			strcpy(bufptr, spop());
+			strlcpy(bufptr, spop(), BUFFER_LEN - (bufptr - buffer));
 			bufptr += strlen(bufptr);
 			break;
 

@@ -20,12 +20,11 @@ int     line, leftcol, rightcol;
 
 {
     unsigned char *char_ptr, *last_char_ptr, *tchar_ptr;
-    int short tcur_mode;
     attr_t *attr_ptr, *last_attr_ptr, *tattr_ptr;
     term_t *terminal;
 
     terminal = win->terminal;
-    tcur_mode = TCUR_MODES(terminal);
+    //tcur_mode = TCUR_MODES(terminal);
 
     /* Find first modified character position */
     char_ptr = &TW_CHAR(win, line, leftcol);

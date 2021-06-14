@@ -32,10 +32,10 @@ void    tscroll_forward(terminal)
 term_t *terminal;
 
 {
-    int curline,curcol,hard_scroll;
+    int     hard_scroll;
 
     /* Get current screen position */
-    TFIND_CURSOR(terminal,curline,curcol);
+    // TFIND_CURSOR(terminal,curline,curcol);
     
     /* Scroll screen image */
     iscroll_forward(&terminal->image,TSCROLL_TOP(terminal),

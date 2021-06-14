@@ -69,7 +69,7 @@ char    *history[];
     /* FIXME: Display in reverse video to indicate that it will be
        blanked by the first keystroke */
     len = strlen(string);
-    strcpy(temp, string);
+    strlcpy(temp, string, maxlen);
 
     TW_FIND_CURSOR(win, line, col);
     tw_move_to(win, line, col);
@@ -262,7 +262,7 @@ char    *history[];
     tw_move_to(win,line,col);
     for (p=0; p<MIN(len,field_width); ++p)
 	tw_get_string_putc(win,temp[p],string_type);
-    strcpy(string, temp);
+    strlcpy(string, temp, maxlen);
     
     if ( history != NULL )
     {
