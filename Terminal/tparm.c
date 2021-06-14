@@ -1,6 +1,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdarg.h>
+#include <xtend.h>  // strlcpy() on Linux
 #include "twintk_term.h"
 
 #define BUFFER_LEN  256
@@ -20,6 +21,7 @@ char    *string;
 	static  char    *bufptr;
 	static  int     variable[26];
 	va_list list;
+	char            *p;
 
 	va_start(list,string);
 	for (i=0; i<10; ++i)
@@ -102,8 +104,11 @@ char    *string;
 			break;
 
 		    case 's':
-			strlcpy(bufptr, spop(), BUFFER_LEN - (bufptr - buffer));
-			bufptr += strlen(bufptr);
+			if ( (p = spop()) != NULL )
+			{
+			    strlcpy(bufptr, p, BUFFER_LEN - (bufptr - buffer));
+			    bufptr += strlen(bufptr);
+			}
 			break;
 
 		    case 'p':
