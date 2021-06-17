@@ -52,6 +52,10 @@ OBJ     =   Image/del_image.o Image/iaddc.o Image/ichange_sreg.o \
 LOCALBASE   ?= ../local
 PREFIX      ?= ${LOCALBASE}
 
+# Allow caller to override either MANPREFIX or MANDIR
+MANPREFIX   ?= ${PREFIX}
+MANDIR      ?= ${MANPREFIX}/man
+
 INSTALL     ?= install
 RM          ?= /bin/rm
 CP          ?= /bin/cp
