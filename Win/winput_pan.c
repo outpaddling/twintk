@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <xtend.h>
+#include <xtend/string.h>   // strlcpy() on Linux
 #include "twintk.h"
 
 #define GOTO_FIELD(win,field)\

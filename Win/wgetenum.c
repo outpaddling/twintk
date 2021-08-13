@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <xtend.h>
+#include <xtend/string.h>   // strlcpy() on Linux
 #include "twintk.h"
 
 int     tw_get_enum(win_t *win, char *string, char *list[],

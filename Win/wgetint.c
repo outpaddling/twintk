@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <xtend.h>
+#include <xtend/string.h>   // ltostrn()
 #include "twintk.h"
 
 short   tw_get_short(win, incoming, min, max, base, event)

@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <xtend.h>
+#include <xtend/math.h>
 #include "twintk.h"
 
 void    tw_print_current(win, fields, nfields)
@@ -9,7 +9,7 @@ tw_field_t *fields;
 int nfields;
 
 {
-    int c,digits,original_modes = TW_CUR_MODES(win);
+    int c,d,original_modes = TW_CUR_MODES(win);
 
     for (c = 0; c < nfields; ++c)
     {
@@ -30,27 +30,27 @@ int nfields;
 		break;
 	    case TWC_SHORT:
 	    case TWC_INT:
-		digits = MAX(num_size(fields[c].int_max, 10),
-			     num_size(fields[c].int_min, 10));
-		tw_blank_field(win, digits);
+		d = MAX(digits(fields[c].int_max, 10),
+			     digits(fields[c].int_min, 10));
+		tw_blank_field(win, d);
 		tw_printf(win, "%d", *fields[c].data.int_ptr);
 		break;
 	    case TWC_UINT:
-		digits = MAX(num_size(fields[c].uint_max,10),
-			     num_size(fields[c].uint_min,10));
-		tw_blank_field(win, digits);
+		d = MAX(digits(fields[c].uint_max,10),
+			     digits(fields[c].uint_min,10));
+		tw_blank_field(win, d);
 		tw_printf(win, "%u", *fields[c].data.uint_ptr);
 		break;
 	    case TWC_LONG:
-		digits = MAX(num_size(fields[c].long_max,10),
-			     num_size(fields[c].long_min,10));
-		tw_blank_field(win, digits);
+		d = MAX(digits(fields[c].long_max,10),
+			     digits(fields[c].long_min,10));
+		tw_blank_field(win, d);
 		tw_printf(win, "%ld", *fields[c].data.long_ptr);
 		break;
 	    case TWC_DOUBLE:
-		digits = MAX(num_size(fields[c].double_max,10),
-			     num_size(fields[c].double_min,10));
-		tw_blank_field(win, digits);
+		d = MAX(digits(fields[c].double_max,10),
+			     digits(fields[c].double_min,10));
+		tw_blank_field(win, d);
 		tw_printf(win, "%f", *fields[c].data.double_ptr);
 		break;
 	    case TWC_MENU:

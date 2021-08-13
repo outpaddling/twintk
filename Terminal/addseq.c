@@ -36,7 +36,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <xtend.h>
+#include <xtend/string.h>   // strviscpy()
 #include "twintk_term.h"
 
 int     add_seq(seq_table, new_str, value, max_seq)
@@ -69,7 +69,7 @@ int     value, max_seq;
     {
 	/*char    temp[101];
 	
-	viscpy(temp,new_str,100);
+	strviscpy(temp,new_str,100);
 	printf("Adding %s at position %d\r\n",temp,s);*/
 	for (c = count; c > s; --c)
 	{
@@ -81,7 +81,7 @@ int     value, max_seq;
 	seq_table[++count].string = NULL;
 	return (0);
     }
-    viscpy(temp, (unsigned char *)new_str, 127);
+    strviscpy(temp, (unsigned char *)new_str, 127);
     /*fprintf(stderr,"add_seq(): Warning: Sequence %s, key %d collided with existing key %d.\n",
 	new_str, value, seq_table[s].value);*/
     return(SEQ_COLLISION);  /* Diff == 0 (collision) */

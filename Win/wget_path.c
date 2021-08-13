@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <dirent.h>
 #include <sys/param.h>
-#include <xtend.h>
+#include <xtend/string.h>   // strlcpy() on Linux
 #include "twintk.h"
 
 /****************************************************

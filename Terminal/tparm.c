@@ -1,7 +1,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdarg.h>
-#include <xtend.h>  // strlcpy() on Linux
+#include <xtend/string.h>  // strlcpy() on Linux
 #include "twintk_term.h"
 
 #define BUFFER_LEN  256

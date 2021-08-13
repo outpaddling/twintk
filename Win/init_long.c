@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <xtend.h>
+#include <xtend/math.h>
 #include "twintk.h"
 
 void    tw_init_long(tw_panel_t *panel, int line, int col, long min, long max,
@@ -20,6 +20,6 @@ void    tw_init_long(tw_panel_t *panel, int line, int col, long min, long max,
     field->prompt = prompt;
     field->help = help;
     field->data.long_ptr = long_ptr;
-    field->field_len = MAX(num_size(max,10),num_size(min,10));
+    field->field_len = MAX(digits(max,10),digits(min,10));
 }
 

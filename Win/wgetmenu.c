@@ -1,6 +1,7 @@
 #include <string.h>
 #include <ctype.h>
-#include <xtend.h>
+#include <xtend/string.h>   // strlcpy() on Linux
+#include <xtend/time.h>
 #include "twintk.h"
 
 #define LINE_POS(c) (1 + ((c)-first_str) % (TW_LINES(win)-2))

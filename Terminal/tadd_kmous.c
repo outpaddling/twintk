@@ -27,7 +27,7 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <xtend.h>
+//#include <xtend.h>
 #include "twintk_term.h"
     
 void    tadd_key_mouse(term_t *terminal)

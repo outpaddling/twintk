@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include <xtend.h>
+//#include <xtend.h>
 #include "twintk.h"
 
 void    tw_init_ldouble(tw_panel_t *panel, int line, int col,
