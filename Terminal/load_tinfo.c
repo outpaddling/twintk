@@ -52,7 +52,7 @@ term_t *terminal;
     int     fd = -1, bytes_read, num_strings, i;
     struct header header;
     char    ch, filename[PATH_MAX + 1], term_names[NAME_SIZE], *dir, *path,
-	    temp_path[PATH_MAX+1] = "",message[81];
+	    temp_path[PATH_MAX+1] = "",message[PATH_MAX + 50];
     extern int errno;
 
     /* Temp space to inhale terminfo data into */
@@ -98,7 +98,7 @@ term_t *terminal;
 	    snprintf(filename, PATH_MAX, "%s/%s/%c/%s", PREFIX, dir, *term_name, term_name);
 	if ((fd = open(filename, O_RDONLY, 0)) == -1)
 	{
-	    snprintf(message,80,"load_tinfo(): Could not open %s",filename);
+	    snprintf(message,PATH_MAX+50,"load_tinfo(): Could not open %s",filename);
 	    perror(message);
 	    if ( errno == ENOENT )
 	    {

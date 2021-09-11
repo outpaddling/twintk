@@ -4,11 +4,26 @@
 #include <xtend/string.h>   // strlcpy() on Linux
 #include "twintk.h"
 
+void    goto_field(win_t *win, tw_field_t *field, int original_mode)
+
+{
+    tw_move_to(win, (field)->line, (field)->col + strlen((field)->prompt));
+    if ( !TNO_COLOR_VIDEO(win->terminal,NCV_BOLD) )
+    {
+	TW_SET_MODES(win,original_mode|BOLD_MODE);
+    }
+    TCURSOR_NORMAL(win->terminal);
+}
+
+/* FIXME: Remove after fully testing goto_field() above
 #define GOTO_FIELD(win,field)\
     tw_move_to(win, (field)->line, (field)->col + strlen((field)->prompt));\
     if ( !TNO_COLOR_VIDEO(win->terminal,NCV_BOLD) )\
+    {\
 	TW_SET_MODES(win,original_mode|BOLD_MODE);\
+    }\
     TCURSOR_NORMAL(win->terminal)
+*/
 
 int     tw_input_panel(win, panel, help_line)
 win_t   *win;
@@ -51,7 +66,7 @@ int     help_line;
 	tw_blank_field(win,(int)(TW_COLS(win)-strlen(fields[c].help)-1)>>1);
 
 	if ( fields[c].data_type != TWC_MENU )
-	    GOTO_FIELD(win,fields+c);
+	    goto_field(win,fields+c, original_mode);
 	switch (fields[c].data_type)
 	{
 	    case TWC_STRING:
@@ -93,7 +108,7 @@ int     help_line;
 		    c2 = menu_str_link[c];
 		    strlcpy(fields[c2].temp_data.string_ptr,
 			    fields[c].temp_data.string_ptr,fields[c2].string_len);
-		    GOTO_FIELD(win,fields+c2);
+		    goto_field(win, fields+c2, original_mode);
 		    tw_blank_field(win,fields[c2].field_len);
 		    tw_puts(win,fields[c2].temp_data.string_ptr);
 		}
