@@ -63,7 +63,7 @@ MKDIR       ?= /bin/mkdir
 PRINTF      ?= printf
 
 CFLAGS      ?= -Wall -O -g
-INCLUDES    += -IImage -ITerminal -IWin -IMouse -I${LOCALBASE}/include
+INCLUDES    += -IImage -ITerminal -IWin -IMouse -isystem ${LOCALBASE}/include
 CFLAGS      += ${INCLUDES} -DPREFIX="\"${PREFIX}\""
 
 all:    ${SLIB}
