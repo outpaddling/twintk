@@ -28,4 +28,11 @@ case $(uname) in
 
 esac
 
-make clean install
+# NetBSD make won't install objs into subdirectory
+if [ $(uname) = NetBSD ]; then
+    make=gmake
+else
+    make=make
+fi
+
+$make clean install
