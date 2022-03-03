@@ -170,7 +170,7 @@ event_t        *event;
 					  last_str);
 			    
 			    /* Fake ctrl+D on double click */
-			    if ( difftimeofday(&curtime,&prevtime) < 300000 )
+			    if ( xt_difftimeofday(&curtime,&prevtime) < 300000 )
 			    {
 				event->type = KEY_PRESS;
 				ch = event->value = '\004';
