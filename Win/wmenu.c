@@ -12,13 +12,19 @@ int         no_acs, no_color, foreground, background,
 
 {
     win_t  *win;
-    int     s, c, len, maxlen, cur_modes, flags = NO_AUTO_SCROLL|SHADOW;
+    int     s, lines, c, len, maxlen, cur_modes, flags = NO_AUTO_SCROLL|SHADOW;
     image_t *image;
 
     maxlen = strlen(text[0]);
-    for (c = 0; *text[c] != '\0'; ++c)
+    
+    /*
+     *  FIXME: Make menus scrollable in case they are too tall for the
+     *  terminal.  For now just truncate the menu to fit by checking TLINES.
+     */
+    for (lines = 0; (*text[lines] != '\0') &&
+		    (lines < TLINES(terminal) - row - 3); ++lines)
     {
-	if ((len = strlen(text[c])) > maxlen)
+	if ((len = strlen(text[lines])) > maxlen)
 	    maxlen = len - 1;
     }
 
@@ -26,7 +32,7 @@ int         no_acs, no_color, foreground, background,
 	flags |= NO_COLOR;
     if ( no_acs )
 	flags |= NO_ACS;
-    if ( (win = tw_new_win(terminal, c + 2, maxlen + 4, row, col, flags)) == NULL )
+    if ( (win = tw_new_win(terminal, lines + 2, maxlen + 4, row, col, flags)) == NULL )
 	return NULL;
     
     tw_set_win_attr(win,REVERSE_MODE,foreground,background,
@@ -54,7 +60,7 @@ int         no_acs, no_color, foreground, background,
 	    tw_draw_border(win);
 	}
     
-	for (s = 0; *text[s] != '\0'; ++s)
+	for (s = 0; s < lines; ++s)
 	{
 	    // FIXME: Change '1' to something descriptive throughout
 	    if ( *text[s] == *TWC_HLINE )
