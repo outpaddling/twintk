@@ -1,6 +1,7 @@
 #include <string.h>
 #include <fnmatch.h>
 #include <unistd.h>
+#include <limits.h>         // PATH_MAX on SunOS
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <dirent.h>

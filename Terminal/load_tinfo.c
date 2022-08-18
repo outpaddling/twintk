@@ -29,6 +29,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <limits.h>         // PATH_MAX on SunOS
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/param.h>
