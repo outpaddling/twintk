@@ -279,7 +279,7 @@ term_t  *terminal;
 int     main()
 
 {
-    init_term(stdin,stdout,stderr,NULL);
+    init_term(stdin,stdout,stderr,NULL,0);
     return 0;
 }
 #endif
