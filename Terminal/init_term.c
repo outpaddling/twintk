@@ -273,14 +273,3 @@ term_t  *terminal;
     new_image(&terminal->image,terminal->lines,terminal->columns,PLAIN);
     ISET_AUTO_SCROLL(&terminal->image);
 }
-
-
-#ifdef DEBUG
-int     main()
-
-{
-    init_term(stdin,stdout,stderr,NULL,0);
-    return 0;
-}
-#endif
-
