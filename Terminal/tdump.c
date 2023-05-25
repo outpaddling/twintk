@@ -29,9 +29,8 @@
  
 #include "twintk_term.h"
 
-int     tdump(term,filename)
-term_t  *term;
-char    *filename;
+int 
+tdump (term_t *term, char *filename)
 
 {
     FILE    *fp;

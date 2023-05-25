@@ -28,10 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void    init_names(terminal,booleans,numbers,strings)
-term_t  *terminal;
-char    booleans[],*strings[];
-short   numbers[];
+void 
+init_names (term_t *terminal, char booleans[], short numbers[], char *strings[])
 
 {
     int     c;

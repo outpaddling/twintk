@@ -28,9 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void        tredraw(terminal,topline,leftcol,bottomline,rightcol)
-term_t      *terminal;
-int    topline,leftcol,bottomline,rightcol;
+void 
+tredraw (term_t *terminal, int topline, int leftcol, int bottomline, int rightcol)
 
 {
     int    l,save_top,save_bottom,save_line,save_col;

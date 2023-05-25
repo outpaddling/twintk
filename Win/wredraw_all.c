@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_redraw_all(terminal)
-term_t *terminal;
+void 
+tw_redraw_all (term_t *terminal)
 
 {
     winlist_t *p;

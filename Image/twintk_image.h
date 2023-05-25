@@ -213,77 +213,68 @@ extern int TERM_DEBUG;
 #define IAUTO_SCROLL(i)         ((i)->auto_scroll)
 #define IS_SUB_IMAGE(i)         ((i)->sub_image)
 
-#ifndef __PROTO
-#if defined(__STDC__) || defined(__cplusplus)
-# define __PROTO(p) p
-#else
-# define __PROTO(p) ()
-#endif
-#endif
-
-
 /* del_image.c */
-void del_image __PROTO((image_t *image, int subwin));
+void del_image (image_t *image, int subwin);
 
 /* iaddc.c */
-void iaddc __PROTO((image_t *image, int l, int c, int ch));
+void iaddc (image_t *image, int l, int c, int ch);
 
 /* ichange_sreg.c */
-int ichange_scroll_region __PROTO((image_t *image, int top, int bottom));
+int ichange_scroll_region (image_t *image, int top, int bottom);
 
 /* iclear_eol.c */
-void iclear_eol __PROTO((image_t *image));
+void iclear_eol (image_t *image);
 
 /* iclear_eos.c */
-void iclear_eos __PROTO((image_t *image));
+void iclear_eos (image_t *image);
 
 /* iclr_image.c */
-void iclear_image __PROTO((image_t *image));
+void iclear_image (image_t *image);
 
 /* idelete_ch.c */
-void idelete_ch __PROTO((image_t *image));
+void idelete_ch (image_t *image);
 
 /* idump.c */
-void idump __PROTO((image_t *image));
+void idump (image_t *image);
 
 /* iinsert_ch.c */
-void iinsert_ch __PROTO((image_t *image, int ch));
+void iinsert_ch (image_t *image, int ch);
 
 /* imove_down.c */
-int imove_down __PROTO((image_t *image));
+int imove_down (image_t *image);
 
 /* imove_left.c */
-int imove_left __PROTO((image_t *image));
+int imove_left (image_t *image);
 
 /* imove_right.c */
-int imove_right __PROTO((image_t *image));
+int imove_right (image_t *image);
 
 /* imove_to.c */
-int imove_to __PROTO((image_t *image, int line, int col));
+int imove_to (image_t *image, int line, int col);
 
 /* imove_up.c */
-int imove_up __PROTO((image_t *image));
+int imove_up (image_t *image);
 
 /* inext_line.c */
-void inext_line __PROTO((image_t *image));
+void inext_line (image_t *image);
 
 /* init_image.c */
-void init_image __PROTO((image_t *image, int lines, int cols, int traits));
+void init_image (image_t *image, int lines, int cols, int traits);
 
 /* iputc.c */
-void iputc __PROTO((image_t *image, int ch));
+void iputc (image_t *image, int ch);
 
 /* iputs.c */
-void iputs __PROTO((image_t *image, char *str));
+void iputs (image_t *image, char *str);
 
 /* iscroll_for.c */
-void iscroll_forward __PROTO((image_t *image, int topline, int bottomline));
+void iscroll_forward (image_t *image, int topline, int bottomline);
 
 /* iscroll_rev.c */
-void iscroll_reverse __PROTO((image_t *image, int topline, int bottomline));
+void iscroll_reverse (image_t *image, int topline, int bottomline);
 
 /* new_image.c */
-void new_image __PROTO((image_t *image, int lines, int cols, int traits));
+void new_image (image_t *image, int lines, int cols, int traits);
 
 /* sub_image.c */
-void sub_image __PROTO((image_t *parent_image, image_t *image, int lines, int cols, int parent_line, int parent_col, int traits));
+void sub_image (image_t *parent_image, image_t *image, int lines, int cols, int parent_line, int parent_col, int traits);

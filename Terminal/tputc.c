@@ -29,9 +29,8 @@
 #include <string.h>
 #include "twintk_term.h"
 
-void    tputc(terminal,ch)
-term_t  *terminal;
-int     ch;
+void 
+tputc (term_t *terminal, int ch)
 
 {
     static int     wrapped = 0;

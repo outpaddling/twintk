@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void    tinsert_line(terminal)
-term_t  *terminal;
+void 
+tinsert_line (term_t *terminal)
 
 {
     int     curline = TCUR_LINE(terminal),

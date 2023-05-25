@@ -25,10 +25,8 @@ void    goto_field(win_t *win, tw_field_t *field, int original_mode)
     TCURSOR_NORMAL(win->terminal)
 */
 
-int     tw_input_panel(win, panel, help_line)
-win_t   *win;
-tw_panel_t *panel;
-int     help_line;
+int 
+tw_input_panel (win_t *win, tw_panel_t *panel, int help_line)
 
 {
     int     c, c2, ch, nfields = panel->count;
@@ -179,9 +177,8 @@ int     help_line;
 }
 
 
-void    tw_init_fields(fields,menu_str_link,nfields)
-tw_field_t fields[];
-int     menu_str_link[], nfields;
+void 
+tw_init_fields (tw_field_t fields[], int menu_str_link[], int nfields)
 
 {
     int     c, c2;
@@ -244,12 +241,8 @@ int     menu_str_link[], nfields;
 }
 
 
-int     tw_mouse_event(win,fields,event,help,help_line,nfields,ch,c)
-win_t   *win;
-tw_field_t fields[];
-event_t *event;
-char    *help;
-int     help_line,nfields,ch,*c;
+int 
+tw_mouse_event (win_t *win, tw_field_t fields[], event_t *event, char *help, int help_line, int nfields, int ch, int *c)
 
 {
     int     done_col, cancel_col, c2;
@@ -301,9 +294,8 @@ int     help_line,nfields,ch,*c;
 }
 
 
-void    tw_copy_data(fields,nfields,menu_str_link)
-tw_field_t fields[];
-int     nfields, menu_str_link[];
+void 
+tw_copy_data (tw_field_t fields[], int nfields, int menu_str_link[])
 
 {
     int     c, c2;
@@ -355,9 +347,8 @@ int     nfields, menu_str_link[];
 }
 
 
-void    tw_free_temp_fields(fields,nfields)
-tw_field_t fields[];
-int     nfields;
+void 
+tw_free_temp_fields (tw_field_t fields[], int nfields)
 
 {
     int         c;

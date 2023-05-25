@@ -30,8 +30,8 @@
 #include <unistd.h>
 #include "twintk_term.h"
 
-int     tgetc(terminal)
-term_t  *terminal;
+int 
+tgetc (term_t *terminal)
 
 {
     int     ch;

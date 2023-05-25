@@ -29,9 +29,8 @@
 #include <stdlib.h>
 #include "twintk_term.h"
 
-int         tmove_to(terminal,line,col)
-term_t      *terminal;
-int    line,col;
+int 
+tmove_to (term_t *terminal, int line, int col)
 
 {
     int     stat, old_modes;

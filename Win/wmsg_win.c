@@ -1,10 +1,8 @@
 #include <string.h>
 #include "twintk.h"
 
-win_t   *tw_message_win(term,message,fg,bg,attr)
-term_t  *term;
-char    *message[];
-int    fg,bg,attr;
+win_t *
+tw_message_win (term_t *term, char *message[], int fg, int bg, int attr)
 
 {
     char    **p;

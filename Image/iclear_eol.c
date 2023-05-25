@@ -27,8 +27,8 @@
 
 #include "twintk_image.h"
 
-void    iclear_eol(image)
-image_t *image;
+void 
+iclear_eol (image_t *image)
 
 {
     int    l=image->cur_line,c;

@@ -1,10 +1,8 @@
 #include <ctype.h>
 #include "twintk.h"
 
-int     tw_get_seq(win,sequence,max_len)
-win_t  *win;
-char    *sequence;
-size_t  max_len;
+int 
+tw_get_seq (win_t *win, char *sequence, size_t max_len)
 
 {
     int     ch;

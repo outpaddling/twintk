@@ -39,10 +39,8 @@
 #include <xtend/string.h>   // strviscpy()
 #include "twintk_term.h"
 
-int     add_seq(seq_table, new_str, value, max_seq)
-sequ_t  seq_table[];
-char    new_str[];
-int     value, max_seq;
+int 
+add_seq (sequ_t seq_table[], char new_str[], int value, int max_seq)
 
 {
     int             s, c, diff = 1;

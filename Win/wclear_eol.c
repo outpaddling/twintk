@@ -2,8 +2,8 @@
 #include <string.h>
 #include "twintk.h"
 
-void    tw_clear_to_eol(win)
-win_t    *win;
+void 
+tw_clear_to_eol (win_t *win)
 
 {
     /* Clear buffer to eol */

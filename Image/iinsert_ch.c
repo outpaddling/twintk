@@ -28,9 +28,8 @@
 #include <string.h>
 #include "twintk_image.h"
 
-void    iinsert_ch(image,ch)
-image_t *image;
-int     ch;
+void 
+iinsert_ch (image_t *image, int ch)
 
 {
     int    line,col;

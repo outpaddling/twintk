@@ -33,9 +33,8 @@
  * Change the scrolling region on terminal screen
  *************************************************/
 
-int         tchange_scroll_region(terminal, top, bottom)
-term_t      *terminal;
-int    top, bottom;
+int 
+tchange_scroll_region (term_t *terminal, int top, int bottom)
 
 {
     char   *sc;

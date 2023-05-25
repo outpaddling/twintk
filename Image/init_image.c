@@ -27,9 +27,8 @@
 
 #include "twintk_image.h"
 
-void        init_image(image,lines,cols,traits)
-image_t     *image;
-int    lines,cols,traits;
+void 
+init_image (image_t *image, int lines, int cols, int traits)
 
 {
     /* Initialize screen control variables */

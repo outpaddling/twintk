@@ -45,9 +45,8 @@
 const short   Split = 1;
 #define MUST_SWAP   *( ((char *)(&Split)) + 1)
 
-int     load_tinfo(term_name, terminal)
-char   *term_name;
-term_t *terminal;
+int 
+load_tinfo (char *term_name, term_t *terminal)
 
 {
     int     fd = -1, bytes_read, num_strings, i;

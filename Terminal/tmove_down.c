@@ -29,8 +29,8 @@
  
 #include "twintk_term.h"
 
-int     tmove_down(terminal)
-term_t  *terminal;
+int 
+tmove_down (term_t *terminal)
 
 {
     int     stat,line,col;

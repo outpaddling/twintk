@@ -1,8 +1,8 @@
 #include <string.h>
 #include "twintk.h"
 
-void    tw_del_ch(win)
-win_t  *win;
+void 
+tw_del_ch (win_t *win)
 
 {
     /* Update screen image */

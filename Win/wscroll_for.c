@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_scroll_forward(win)
-win_t   *win;
+void 
+tw_scroll_forward (win_t *win)
 
 {
     iscroll_forward(&win->image,TW_SCROLL_TOP(win),TW_SCROLL_BOTTOM(win));
@@ -9,8 +9,8 @@ win_t   *win;
 }
 
 
-void    ptw_scroll_forward(win)
-win_t   *win;
+void 
+ptw_scroll_forward (win_t *win)
 
 {
     int top,bottom,reset;

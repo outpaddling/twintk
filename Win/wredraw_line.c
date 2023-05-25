@@ -1,8 +1,7 @@
 #include "twintk.h"
 
-void        tw_redraw_line(win,line,leftcol,rightcol)
-win_t       *win;
-int    line,leftcol,rightcol;
+void 
+tw_redraw_line (win_t *win, int line, int leftcol, int rightcol)
 
 {
     int    save_line,save_col;
@@ -13,9 +12,8 @@ int    line,leftcol,rightcol;
 }
 
 
-void        tw_redraw_line_leave_cursor(win,line,leftcol,rightcol)
-win_t       *win;
-int    line,leftcol,rightcol;
+void 
+tw_redraw_line_leave_cursor (win_t *win, int line, int leftcol, int rightcol)
 
 {
     unsigned char        *char_ptr,*last_char_ptr;

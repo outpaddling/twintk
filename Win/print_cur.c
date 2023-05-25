@@ -3,10 +3,8 @@
 #include <xtend/math.h>
 #include "twintk.h"
 
-void    tw_print_current(win, fields, nfields)
-win_t   *win;
-tw_field_t *fields;
-int nfields;
+void 
+tw_print_current (win_t *win, tw_field_t *fields, int nfields)
 
 {
     int c,d,original_modes = TW_CUR_MODES(win);

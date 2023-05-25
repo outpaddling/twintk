@@ -1,14 +1,8 @@
 #include <string.h>
 #include "twintk.h"
 
-win_t  *tw_menu(terminal, row, col, text, border, no_acs, no_color,
-	     foreground, background, hl_foreground, hl_background)
-term_t      *terminal;
-int         row, col;
-char        *text[];
-border_t    *border;
-int         no_acs, no_color, foreground, background,
-	    hl_foreground, hl_background;
+win_t *
+tw_menu (term_t *terminal, int row, int col, char *text[], border_t *border, int no_acs, int no_color, int foreground, int background, int hl_foreground, int hl_background)
 
 {
     win_t  *win;

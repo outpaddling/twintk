@@ -31,10 +31,8 @@
 #include <time.h>
 #include "twintk_term.h"
 
-int     taddseq(term,new_str,value)
-term_t  *term;
-char    *new_str;
-int     value;
+int 
+taddseq (term_t *term, char *new_str, int value)
 
 {
     int     status;

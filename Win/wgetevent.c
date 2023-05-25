@@ -1,8 +1,7 @@
 #include "twintk.h"
 
-int     tw_get_event(win,event)
-win_t   *win;
-event_t *event;
+int 
+tw_get_event (win_t *win, event_t *event)
 
 {
     event_t temp_event;

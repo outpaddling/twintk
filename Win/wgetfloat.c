@@ -3,10 +3,8 @@
 #include <ctype.h>
 #include "twintk.h"
 
-float   tw_get_float(win, incoming, min, max, event)
-win_t   *win;
-double  incoming, min, max;
-event_t *event;
+float 
+tw_get_float (win_t *win, double incoming, double min, double max, event_t *event)
 
 {
     return (float)
@@ -14,10 +12,8 @@ event_t *event;
 }
 
 
-double  tw_get_double(win, incoming, min, max, event)
-win_t  *win;
-double  incoming, min, max;
-event_t *event;
+double 
+tw_get_double (win_t *win, double incoming, double min, double max, event_t *event)
 
 {
     int     len, pos = 0, p, ch, line, col, maxlen, touched = 0, cooked;

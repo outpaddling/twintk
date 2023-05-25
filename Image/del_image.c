@@ -29,9 +29,8 @@
 #include <stdlib.h>
 #include "twintk_image.h"
 
-void    del_image(image,subwin)
-image_t *image;
-int     subwin;
+void 
+del_image (image_t *image, int subwin)
 
 {
     int l;

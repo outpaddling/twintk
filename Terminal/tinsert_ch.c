@@ -29,9 +29,8 @@
 #include <string.h>
 #include "twintk_term.h"
 
-void    tinsert_ch(terminal,ch)
-term_t  *terminal;
-int     ch;
+void 
+tinsert_ch (term_t *terminal, int ch)
 
 {
     /* Update screen image */

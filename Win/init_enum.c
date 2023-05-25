@@ -2,10 +2,8 @@
 #include <ctype.h>
 #include "twintk.h"
 
-void    tw_init_enum(panel, line, col, len, list, prompt, help, string_ptr)
-tw_panel_t *panel;
-int line, col, len;
-char    *list[], *prompt, *help, *string_ptr;
+void 
+tw_init_enum (tw_panel_t *panel, int line, int col, int len, char *list[], char *prompt, char *help, char *string_ptr)
 
 {
     tw_field_t *field;

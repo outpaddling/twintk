@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include "twintk.h"
 
-void    tw_del_win(win)
-win_t   **win;
+void 
+tw_del_win (win_t **win)
 
 {
     win_t   *w = *win, *shadow = NULL;

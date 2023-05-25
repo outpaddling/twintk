@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_clear_to_eow(win)
-win_t   *win;
+void 
+tw_clear_to_eow (win_t *win)
 
 {
     int    l,start_line,start_col;

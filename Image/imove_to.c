@@ -28,9 +28,8 @@
 #include <stdio.h>
 #include "twintk_image.h"
 
-int     imove_to(image,line,col)
-image_t *image;
-int    line,col;
+int 
+imove_to (image_t *image, int line, int col)
 
 {
     if ( ((unsigned)line < image->lines) && ((unsigned)col <image->cols) )

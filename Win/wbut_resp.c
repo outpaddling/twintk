@@ -4,10 +4,8 @@
 
 #define MAX_BUTTONS 20
 
-void    tw_draw_button(win,line,col,button)
-win_t   *win;
-int     line, col;
-char    *button;
+void 
+tw_draw_button (win_t *win, int line, int col, char *button)
 
 {
     int     save = TW_CUR_MODES(win);
@@ -26,10 +24,8 @@ char    *button;
 }
 
 
-int     tw_button_response(win,button_line,buttons)
-win_t   *win;
-int     button_line;
-char    *buttons[];
+int 
+tw_button_response (win_t *win, int button_line, char *buttons[])
 
 {
     event_t event;
@@ -112,8 +108,8 @@ char    *buttons[];
 }
 
 
-int     tw_button_action_key(str)
-char    *str;
+int 
+tw_button_action_key (char *str)
 
 {
     while ( !isalnum(*str) && (*str!='\0') )

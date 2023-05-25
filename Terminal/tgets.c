@@ -30,10 +30,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-char    *tgets(terminal,string,maxlen)
-term_t  *terminal;
-char    string[];
-int     maxlen;
+char *
+tgets (term_t *terminal, char string[], int maxlen)
 
 {
     char    *p;

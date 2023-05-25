@@ -27,8 +27,8 @@
 
 #include "twintk_term.h"
 
-int     tpush_event_mask(terminal)
-term_t  *terminal;
+int 
+tpush_event_mask (term_t *terminal)
 
 {
     if ( terminal->event_top == MAX_EVENT_STACK )
@@ -38,8 +38,8 @@ term_t  *terminal;
 }
 
 
-int     tpop_event_mask(terminal)
-term_t  *terminal;
+int 
+tpop_event_mask (term_t *terminal)
 
 {
     if ( terminal->event_top == 0 )

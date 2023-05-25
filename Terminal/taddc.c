@@ -27,9 +27,8 @@
 
 #include "twintk_term.h"
 
-void    taddc(terminal,ch)
-term_t  *terminal;
-int     ch;
+void 
+taddc (term_t *terminal, int ch)
 
 {
     int     line,col;

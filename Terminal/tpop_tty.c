@@ -36,8 +36,8 @@
  * Restore all tty modes to a previous mode popped from the stack.
  */
  
-int     tpop_tty(terminal)
-term_t  *terminal;
+int 
+tpop_tty (term_t *terminal)
 
 {
     node_t  *temp;

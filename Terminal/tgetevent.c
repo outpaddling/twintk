@@ -40,9 +40,8 @@
  * Modifications:
  ************************************************************************/
  
-int     tgetevent(terminal,event)
-term_t  *terminal;
-event_t *event;
+int 
+tgetevent (term_t *terminal, event_t *event)
 
 {
     /*
@@ -164,9 +163,8 @@ event_t *event;
  * Modifications:
  ************************************************************************/
  
-int     tget_key_event(terminal,event)
-term_t  *terminal;
-event_t *event;
+int 
+tget_key_event (term_t *terminal, event_t *event)
 
 {
     static int  last_press = 0;
@@ -212,9 +210,8 @@ event_t *event;
  * Modifications:
  ************************************************************************/
  
-int     tget_mouse_event(terminal,event)
-term_t  *terminal;
-event_t *event;
+int 
+tget_mouse_event (term_t *terminal, event_t *event)
 
 {
     int new_line = terminal->scaled_mouse_line,
@@ -277,8 +274,8 @@ event_t *event;
  * Modifications:
  ************************************************************************/
  
-void    tdisplay_mouse_pointer(terminal)
-term_t  *terminal;
+void 
+tdisplay_mouse_pointer (term_t *terminal)
 
 {
     int     mouse_line = TMOUSE_LINE(terminal),
@@ -349,9 +346,8 @@ term_t  *terminal;
  * Modifications:
  ************************************************************************/
  
-void    terase_mouse_pointer(terminal,mouse_line,mouse_col)
-term_t  *terminal;
-int mouse_line, mouse_col;
+void 
+terase_mouse_pointer (term_t *terminal, int mouse_line, int mouse_col)
 
 {
     int     curline, curcol;
@@ -418,8 +414,8 @@ int mouse_line, mouse_col;
  * Modifications:
  ************************************************************************/
  
-void    update_pos(d,pos,max)
-int     d, max, *pos;
+void 
+update_pos (int d, int *pos, int max)
 
 {
     double  new_pos;

@@ -1,8 +1,8 @@
 #include <ctype.h>
 #include "twintk.h"
 
-int     tw_getc(win)
-win_t  *win;
+int 
+tw_getc (win_t *win)
 
 {
     int     ch;

@@ -4,11 +4,8 @@
  * Set default attributes for a window
  */
  
-void    tw_set_win_attr(win,normal_mode,normal_fg,normal_bg,
-		    highlight_mode,highlight_fg,highlight_bg)
-win_t   *win;
-int normal_mode,normal_fg,normal_bg,
-	 highlight_mode,highlight_fg,highlight_bg;
+void 
+tw_set_win_attr (win_t *win, int normal_mode, int normal_fg, int normal_bg, int highlight_mode, int highlight_fg, int highlight_bg)
 
 {
     win->win_attr.normal.mode = normal_mode;

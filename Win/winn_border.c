@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_draw_border(win)
-win_t   *win;
+void 
+tw_draw_border (win_t *win)
 
 {
     int     c, top_left, top, top_right, right,

@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "twintk.h"
 
-int         tw_move_to(win,line,col)
-win_t       *win;
-int    line,col;
+int 
+tw_move_to (win_t *win, int line, int col)
 
 {
     int     stat;

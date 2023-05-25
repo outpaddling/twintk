@@ -28,9 +28,8 @@
 #include <stdlib.h>
 #include "twintk_image.h"
 
-void            sub_image(parent_image,image,lines,cols,parent_line,parent_col,traits)
-image_t         *parent_image,*image;
-int        lines,cols,parent_line,parent_col,traits;
+void 
+sub_image (image_t *parent_image, image_t *image, int lines, int cols, int parent_line, int parent_col, int traits)
 
 {
     int    l;

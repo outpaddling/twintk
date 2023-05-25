@@ -27,8 +27,8 @@
 
 #include "twintk_term.h"
 
-void    traw_mode(terminal)
-term_t  *terminal;
+void 
+traw_mode (term_t *terminal)
 
 {
     terminal->tty_mode.c_cc[VMIN] = 1;

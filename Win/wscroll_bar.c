@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_draw_scroll_bar(bar_win)
-win_t   *bar_win;
+void 
+tw_draw_scroll_bar (win_t *bar_win)
 
 {
     int     line, col;
@@ -40,9 +40,8 @@ win_t   *bar_win;
 }
 
 
-int     tw_move_scroll_bar(bar_win,numerator,denominator)
-win_t   *bar_win;
-int     numerator, denominator;
+int 
+tw_move_scroll_bar (win_t *bar_win, int numerator, int denominator)
 
 {
     int     pos, status;
@@ -84,8 +83,8 @@ int     numerator, denominator;
 }
 
 
-void    tw_draw_block(win)
-win_t   *win;
+void 
+tw_draw_block (win_t *win)
 
 {
     int     block_ch = ACS_BLOCK(win->terminal), modes;

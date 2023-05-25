@@ -29,8 +29,8 @@
 #include <string.h>
 #include "twintk_term.h"
 
-void    tclear_screen(terminal)
-term_t  *terminal;
+void 
+tclear_screen (term_t *terminal)
 
 {
     /* Clear image */

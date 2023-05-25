@@ -27,8 +27,8 @@
 
 #include "twintk_term.h"
 
-void    tcbreak_mode(terminal)
-term_t  *terminal;
+void 
+tcbreak_mode (term_t *terminal)
 
 {
     terminal->tty_mode.c_cc[VMIN] = 1;

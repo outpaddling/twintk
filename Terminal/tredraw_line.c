@@ -28,9 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void        tredraw_line(terminal,line,leftcol,rightcol)
-term_t      *terminal;
-int    line,leftcol,rightcol;
+void 
+tredraw_line (term_t *terminal, int line, int leftcol, int rightcol)
 
 {
     int    save_line,save_col;
@@ -41,9 +40,8 @@ int    line,leftcol,rightcol;
 }
 
 
-void        tredraw_line_leave_cursor(terminal,line,leftcol,rightcol)
-term_t      *terminal;
-int    line,leftcol,rightcol;
+void 
+tredraw_line_leave_cursor (term_t *terminal, int line, int leftcol, int rightcol)
 
 {
     unsigned char    *cptr,*endcptr;

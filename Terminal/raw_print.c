@@ -33,9 +33,8 @@
 #include <termios.h>
 #include "twintk_term.h"
 
-void    raw_print(terminal,str)
-term_t  *terminal;
-char    *str;
+void 
+raw_print (term_t *terminal, char *str)
 
 {
     struct termios  new,old;

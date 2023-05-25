@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void    tscroll_forward(terminal)
-term_t *terminal;
+void 
+tscroll_forward (term_t *terminal)
 
 {
     int     hard_scroll;

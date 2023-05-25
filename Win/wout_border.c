@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_outer_border(win)
-win_t   *win;
+void 
+tw_outer_border (win_t *win)
 
 {
     int     c,c2,l,ul=201,up=205,ur=187,ri=186,ll=200,lo=205,lr=188,le=186;

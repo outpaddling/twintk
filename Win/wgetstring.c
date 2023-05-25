@@ -15,12 +15,8 @@ void    tw_get_string_putc(win_t *win, int ch,tw_str_t string_type)
 }
 
 
-char    *tw_get_string(win, string, maxlen, field_width, string_type, event)
-win_t  *win;
-char   *string;
-int maxlen, field_width;
-tw_str_t   string_type;
-event_t *event;
+char *
+tw_get_string (win_t *win, char *string, int maxlen, int field_width, tw_str_t string_type, event_t *event)
 
 {
     return tw_get_string_hist(win,string,maxlen,field_width,string_type,
@@ -28,14 +24,8 @@ event_t *event;
 }
 
 
-char    *tw_get_string_hist(win, string, maxlen, field_width, string_type,
-	    event,history)
-win_t  *win;
-char   *string;
-int maxlen, field_width;
-tw_str_t   string_type;
-event_t *event;
-char    *history[];
+char *
+tw_get_string_hist (win_t *win, char *string, int maxlen, int field_width, tw_str_t string_type, event_t *event, char *history[])
 
 {
     int     len, pos = 0, first_pos = 0, p, ch, line, col, touched = 0,

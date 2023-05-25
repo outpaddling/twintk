@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include "twintk.h"
 
-void    tw_unlist_win(win)
-win_t   *win;
+void 
+tw_unlist_win (win_t *win)
 
 {
     winlist_t   *p, *parent;
@@ -48,8 +48,8 @@ win_t   *win;
 }
 
 
-int     tw_show_list(terminal)
-term_t  *terminal;
+int 
+tw_show_list (term_t *terminal)
 
 {
     winlist_t   *p;

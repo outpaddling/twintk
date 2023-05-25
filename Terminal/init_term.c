@@ -36,10 +36,8 @@
 #include <xtend/string.h>   // strblank()
 #include "twintk_term.h"
 
-term_t *init_term(fpin,fpout,fperr,termtype,flags)
-FILE    *fpin,*fpout,*fperr;
-char   *termtype;
-unsigned flags;
+term_t *
+init_term (FILE *fpin, FILE *fpout, FILE *fperr, char *termtype, unsigned flags)
 
 {
     term_t  *terminal;
@@ -167,8 +165,8 @@ unsigned flags;
 }
 
 
-void    init_acsmap(terminal)
-term_t  *terminal;
+void 
+init_acsmap (term_t *terminal)
 
 {
     unsigned char    *p;
@@ -224,8 +222,8 @@ term_t  *terminal;
 }
 
 
-void    resize_terminal(terminal)
-term_t  *terminal;
+void 
+resize_terminal (term_t *terminal)
 
 {
     int     still_no_size;

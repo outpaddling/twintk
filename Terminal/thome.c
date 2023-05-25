@@ -29,8 +29,8 @@
  
 #include "twintk_term.h"
 
-void    thome(terminal)
-term_t  *terminal;
+void 
+thome (term_t *terminal)
 
 {
     if ( terminal->cursor_home != NULL )

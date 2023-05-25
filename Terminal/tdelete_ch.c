@@ -29,8 +29,8 @@
 #include <string.h>
 #include "twintk_term.h"
 
-void    tdelete_ch(terminal)
-term_t  *terminal;
+void 
+tdelete_ch (term_t *terminal)
 
 {
     /* Update screen image */

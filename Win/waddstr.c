@@ -2,10 +2,8 @@
 #include <ctype.h>
 #include "twintk.h"
 
-void    tw_add_string(win, string, maxlen)
-win_t   *win;
-char   *string;
-int maxlen;
+void 
+tw_add_string (win_t *win, char *string, int maxlen)
 
 {
     int     c;

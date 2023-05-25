@@ -29,8 +29,8 @@
  
 #include "twintk_image.h"
 
-int     imove_down(image)
-image_t *image;
+int 
+imove_down (image_t *image)
 
 {
     if ( ICUR_LINE(image) < ILINES(image)-1 )

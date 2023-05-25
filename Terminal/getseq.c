@@ -39,12 +39,8 @@
 #include <sys/time.h>
 #include "twintk_term.h"
 
-int     get_seq(table, first, stream, key_seq, max_len)
-sequ_t  table[];
-int     first;
-FILE    *stream;
-char    key_seq[];
-size_t  max_len;
+int 
+get_seq (sequ_t table[], int first, FILE *stream, char key_seq[], size_t max_len)
 
 {
     int     s,

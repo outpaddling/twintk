@@ -27,8 +27,8 @@
 
 #include "twintk_image.h"
 
-void    iclear_eos(image)
-image_t *image;
+void 
+iclear_eos (image_t *image)
 
 {
     int    l,c;

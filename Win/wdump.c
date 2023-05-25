@@ -1,8 +1,7 @@
 #include "twintk.h"
 
-int     tw_dump_win(win,filename)
-win_t   *win;
-char    *filename;
+int 
+tw_dump_win (win_t *win, char *filename)
 
 {
     FILE    *fp;

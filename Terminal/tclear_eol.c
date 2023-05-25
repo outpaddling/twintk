@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void    tclear_eol(terminal)
-term_t  *terminal;
+void 
+tclear_eol (term_t *terminal)
 
 {
     /* Clear image to eol */

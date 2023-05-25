@@ -36,10 +36,8 @@
 #include <time.h>
 #include "twintk_term.h"
 
-int     topen_mouse_server(terminal,server,device,type)
-term_t  *terminal;
-char    *server, *device;
-int     type;
+int 
+topen_mouse_server (term_t *terminal, char *server, char *device, int type)
 
 {
     char    mouse_type[10];
@@ -72,8 +70,8 @@ int     type;
 }
 
 
-void    tclose_mouse_server(terminal)
-term_t  *terminal;
+void 
+tclose_mouse_server (term_t *terminal)
 
 {
     if ( MOUSE_FD(terminal->mouse) != -1 )

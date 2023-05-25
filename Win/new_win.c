@@ -6,13 +6,15 @@
  *  Create a new window on the specified terminal screen.
  */
  
-win_t  *tw_new_win(terminal, lines, cols, screen_line, screen_col, traits)
-term_t *terminal;   /* The terminal in which the window should be created */
-int     lines,      /* Height of the new window */
-	cols,       /* Width of the new window */
-	screen_line,    /* Location of top line of window on terminal */
-	screen_col,     /* Location of left column of window on terminal */
-	traits;     /* Bitmask of features, such as shadow, border */
+win_t *
+tw_new_win (
+    term_t *terminal,   /* The terminal in which the window should be created */
+    int lines,      /* Height of the new window */
+    int cols,       /* Width of the new window */
+    int screen_line,    /* Location of top line of window on terminal */
+    int screen_col,     /* Location of left column of window on terminal */
+    int traits     /* Bitmask of features, such as shadow, border */
+)
 
 {
     win_t  *win, *temp_win;
@@ -53,9 +55,8 @@ int     lines,      /* Height of the new window */
 }
 
 
-win_t  *simple_win(terminal, lines, cols, screen_line, screen_col, traits)
-term_t *terminal;
-int     lines, cols, screen_line, screen_col, traits;
+win_t *
+simple_win (term_t *terminal, int lines, int cols, int screen_line, int screen_col, int traits)
 
 {
     win_t  *win;
@@ -118,8 +119,8 @@ int     lines, cols, screen_line, screen_col, traits;
 }
 
 
-void    check_position(line_ptr, col_ptr, lines, cols, parent_lines, parent_cols)
-int    *line_ptr, *col_ptr, lines, cols, parent_lines, parent_cols;
+void 
+check_position (int *line_ptr, int *col_ptr, int lines, int cols, int parent_lines, int parent_cols)
 
 {
     int     screen_line = *line_ptr, screen_col = *col_ptr;
@@ -141,8 +142,8 @@ int    *line_ptr, *col_ptr, lines, cols, parent_lines, parent_cols;
 }
 
 
-void    default_win_attr(win)
-win_t  *win;
+void 
+default_win_attr (win_t *win)
 
 {
     win->win_attr.normal.foreground = WHITE;
@@ -161,9 +162,8 @@ win_t  *win;
 }
 
 
-void    init_win(win, lines, cols)
-win_t  *win;
-int     lines, cols;
+void 
+init_win (win_t *win, int lines, int cols)
 
 {
     win->view_lines = lines;

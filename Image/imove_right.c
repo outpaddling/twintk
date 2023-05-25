@@ -29,8 +29,8 @@
  
 #include "twintk_image.h"
 
-int     imove_right(image)
-image_t *image;
+int 
+imove_right (image_t *image)
 
 {
     if ( ICUR_COL(image) < ICOLS(image)-1 )

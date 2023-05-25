@@ -13,12 +13,8 @@
  *  \param  selected_text gets a copy of the menu text if not null
  */
 
-int     tw_get_item(win,menu_text,event,start_line,reverse_menu,selected_text)
-win_t   *win;
-char    *menu_text[];
-event_t *event;
-int     *start_line, reverse_menu;
-char    selected_text[];
+int 
+tw_get_item (win_t *win, char *menu_text[], event_t *event, int *start_line, int reverse_menu, char selected_text[])
 
 {
     int         line = *start_line,
@@ -170,10 +166,8 @@ char    selected_text[];
 }
 
 
-int     mouse_action(win,menu_text,event)
-char    *menu_text[];
-win_t   *win;
-event_t *event;
+int 
+mouse_action (win_t *win, char *menu_text[], event_t *event)
 
 {
     char    *dot_ptr;

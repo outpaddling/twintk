@@ -54,14 +54,6 @@
 
 enum { C_IFLAG, C_OFLAG, C_CFLAG, C_LFLAG, C_LINE };
 
-#ifndef __PROTO
-#ifdef __STDC__
-#define __PROTO(p)  p
-#else
-#define __PROTO(p) ()
-#endif
-#endif
-
 /*****************/
 /* General stuff */
 
@@ -191,7 +183,7 @@ struct header
     {\
 	if ( (t)->get_mouse != NULL )\
 	{\
-	    raw_print(t,tparm((t)->get_mouse,m));\
+	    raw_print(t,tparm((t)->get_mouse,m);\
 	}\
     }
 
@@ -1039,325 +1031,315 @@ typedef struct
 #define TSEND_EVENT(t,m)        ((t)->event_mask |= (m))
 #define TIGNORE_EVENT(t,m)      ((t)->event_mask &= ~(m))
 
-#ifndef __PROTO
-#if __STDC__ || defined(__cplusplus)
-#define __PROTO(s) s
-#else
-#define __PROTO(s) ()
-#endif
-#endif
-
-
 /* addseq.c */
-int add_seq __PROTO((
+int add_seq (
 	sequ_t seq_table[], 
 	char new_str[], 
 	int value, 
-	int max_seq));
+	int max_seq);
 
 /* del_term.c */
-void del_term __PROTO((
-	term_t **term));
+void del_term (
+	term_t **term);
 
 /* getseq.c */
-int get_seq __PROTO((
+int get_seq (
 	sequ_t table[], 
 	int first, 
 	FILE *stream, 
 	char key_seq[], 
-	size_t max_len));
+	size_t max_len);
 
 /* init_keymap.c */
-void init_keymap __PROTO((
-	term_t *terminal));
-void vtxxx_keys __PROTO((
-	term_t *term));
+void init_keymap (
+	term_t *terminal);
+void vtxxx_keys (
+	term_t *term);
 
 /* init_names.c */
-void init_names __PROTO((
+void init_names (
 	term_t *terminal, 
 	char booleans[], 
 	short numbers[], 
-	char *strings[]));
+	char *strings[]);
 
 /* init_term.c */
-term_t *init_term __PROTO((
+term_t *init_term (
 	FILE *fpin, 
 	FILE *fpout, 
 	FILE *fperr, 
 	char *termtype, 
-	unsigned flags));
-void init_acsmap __PROTO((
-	term_t *terminal));
-void resize_terminal __PROTO((
-	term_t *terminal));
+	unsigned flags);
+void init_acsmap (
+	term_t *terminal);
+void resize_terminal (
+	term_t *terminal);
 
 /* load_termcap.c */
-int load_termcap __PROTO((
+int load_termcap (
 	char *term_name, 
-	term_t *terminal));
+	term_t *terminal);
 
 /* load_tinfo.c */
-int load_tinfo __PROTO((
+int load_tinfo (
 	char *term_name, 
-	term_t *terminal));
+	term_t *terminal);
 
 /* mouseserver.c */
-void mouse_handler __PROTO((void));
+void mouse_handler (void);
 
 /* raw_print.c */
-void raw_print __PROTO((
+void raw_print (
 	term_t *terminal, 
-	char *str));
+	char *str);
 
 /* tadd_kmous.c */
-void tadd_key_mouse __PROTO((
-	term_t *terminal));
+void tadd_key_mouse (
+	term_t *terminal);
 
 /* taddc.c */
-void taddc __PROTO((
+void taddc (
 	term_t *terminal, 
-	int ch));
+	int ch);
 
 /* taddseq.c */
-int taddseq __PROTO((
+int taddseq (
 	term_t *term, 
 	char *new_str, 
-	int value));
+	int value);
 
 /* tcbreak_mode.c */
-void tcbreak_mode __PROTO((
-	term_t *terminal));
+void tcbreak_mode (
+	term_t *terminal);
 
 /* tchange_sreg.c */
-int tchange_scroll_region __PROTO((
+int tchange_scroll_region (
 	term_t *terminal, 
 	int top, 
-	int bottom));
+	int bottom);
 
 /* tclear_eol.c */
-void tclear_eol __PROTO((
-	term_t *terminal));
+void tclear_eol (
+	term_t *terminal);
 
 /* tclear_eos.c */
-void tclear_eos __PROTO((
-	term_t *terminal));
+void tclear_eos (
+	term_t *terminal);
 
 /* tclr_screen.c */
-void tclear_screen __PROTO((
-	term_t *terminal));
+void tclear_screen (
+	term_t *terminal);
 
 /* tdelete_ch.c */
-void tdelete_ch __PROTO((
-	term_t *terminal));
+void tdelete_ch (
+	term_t *terminal);
 
 /* tdelete_line.c */
-void tdelete_line __PROTO((
-	term_t *terminal));
+void tdelete_line (
+	term_t *terminal);
 
 /* tdump.c */
-int tdump __PROTO((
+int tdump (
 	term_t *term, 
-	char *filename));
+	char *filename);
 
 /* tget_resp.c */
-int tget_resp __PROTO((
+int tget_resp (
 	term_t *term, 
-	char *valid));
+	char *valid);
 
 /* tgetc.c */
-int tgetc __PROTO((
-	term_t *terminal));
+int tgetc (
+	term_t *terminal);
 
 /* tgetevent.c */
-int tgetevent __PROTO((
+int tgetevent (
 	term_t *terminal, 
-	event_t *event));
-int tget_key_event __PROTO((
+	event_t *event);
+int tget_key_event (
 	term_t *terminal, 
-	event_t *event));
-int tget_mouse_event __PROTO((
+	event_t *event);
+int tget_mouse_event (
 	term_t *terminal, 
-	event_t *event));
-void tdisplay_mouse_pointer __PROTO((
-	term_t *terminal));
-void terase_mouse_pointer __PROTO((
+	event_t *event);
+void tdisplay_mouse_pointer (
+	term_t *terminal);
+void terase_mouse_pointer (
 	term_t *terminal, 
 	int mouse_line, 
-	int mouse_col));
-void update_pos __PROTO((
+	int mouse_col);
+void update_pos (
 	int d, 
 	int *pos, 
-	int max));
+	int max);
 
 /* tgetmouse.c */
-int tget_mouse_packet __PROTO((
+int tget_mouse_packet (
 	term_t *terminal, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* tgets.c */
-char *tgets __PROTO((
+char *tgets (
 	term_t *terminal, 
 	char string[], 
-	int maxlen));
+	int maxlen);
 
 /* tgetseq.c */
-int tgetseq __PROTO((
+int tgetseq (
 	term_t *terminal, 
 	char seq[], 
-	size_t max_len));
+	size_t max_len);
 
 /* thome.c */
-void thome __PROTO((
-	term_t *terminal));
+void thome (
+	term_t *terminal);
 
 /* tinsert_ch.c */
-void tinsert_ch __PROTO((
+void tinsert_ch (
 	term_t *terminal, 
-	int ch));
+	int ch);
 
 /* tinsert_line.c */
-void tinsert_line __PROTO((
-	term_t *terminal));
+void tinsert_line (
+	term_t *terminal);
 
 /* tinsert_mode.c */
-int tinsert_mode __PROTO((
-	term_t *term));
+int tinsert_mode (
+	term_t *term);
 
 /* tmousesrvr.c */
-int topen_mouse_server __PROTO((
+int topen_mouse_server (
 	term_t *terminal, 
 	char *server, 
 	char *device, 
-	int type));
-void tclose_mouse_server __PROTO((
-	term_t *terminal));
+	int type);
+void tclose_mouse_server (
+	term_t *terminal);
 
 /* tmove_down.c */
-int tmove_down __PROTO((
-	term_t *terminal));
+int tmove_down (
+	term_t *terminal);
 
 /* tmove_left.c */
-int tmove_left __PROTO((
-	term_t *terminal));
+int tmove_left (
+	term_t *terminal);
 
 /* tmove_right.c */
-int tmove_right __PROTO((
-	term_t *terminal));
+int tmove_right (
+	term_t *terminal);
 
 /* tmove_to.c */
-int tmove_to __PROTO((
+int tmove_to (
 	term_t *terminal, 
 	int line, 
-	int col));
+	int col);
 
 /* tmove_up.c */
-int tmove_up __PROTO((
-	term_t *terminal));
+int tmove_up (
+	term_t *terminal);
 
 /* tparm.c */
-char *tparm __PROTO((
+char *tparm (
 	char *string, 
-	...));
+	...);
 
 /* tpop_tty.c */
-int tpop_tty __PROTO((
-	term_t *terminal));
+int tpop_tty (
+	term_t *terminal);
 
 /* tprintf.c */
-int tprintf __PROTO((
+int tprintf (
 	term_t *terminal, 
 	char *format, 
-	...));
+	...);
 
 /* tpush_event.c */
-int tpush_event_mask __PROTO((
-	term_t *terminal));
-int tpop_event_mask __PROTO((
-	term_t *terminal));
+int tpush_event_mask (
+	term_t *terminal);
+int tpop_event_mask (
+	term_t *terminal);
 
 /* tpush_tty.c */
-int tpush_tty __PROTO((
-	term_t *terminal));
+int tpush_tty (
+	term_t *terminal);
 
 /* tputc.c */
-void tputc __PROTO((
+void tputc (
 	term_t *terminal, 
-	int ch));
+	int ch);
 
 /* tputs.c */
-void tputs __PROTO((
+void tputs (
 	term_t *terminal, 
-	char *str));
+	char *str);
 
 /* traw_mode.c */
-void traw_mode __PROTO((
-	term_t *terminal));
+void traw_mode (
+	term_t *terminal);
 
 /* tredraw.c */
-void tredraw __PROTO((
+void tredraw (
 	term_t *terminal, 
 	int topline, 
 	int leftcol, 
 	int bottomline, 
-	int rightcol));
+	int rightcol);
 
 /* tredraw_line.c */
-void tredraw_line __PROTO((
+void tredraw_line (
 	term_t *terminal, 
 	int line, 
 	int leftcol, 
-	int rightcol));
-void tredraw_line_leave_cursor __PROTO((
+	int rightcol);
+void tredraw_line_leave_cursor (
 	term_t *terminal, 
 	int line, 
 	int leftcol, 
-	int rightcol));
+	int rightcol);
 
 /* tscroll_for.c */
-void tscroll_forward __PROTO((
-	term_t *terminal));
+void tscroll_forward (
+	term_t *terminal);
 
 /* tscroll_rev.c */
-void tscroll_reverse __PROTO((
-	term_t *terminal));
+void tscroll_reverse (
+	term_t *terminal);
 
 /* tset_bg.c */
-int tset_background __PROTO((
+int tset_background (
 	term_t *terminal, 
-	int color));
+	int color);
 
 /* tset_dim.c */
-void tset_dimensions __PROTO((
+void tset_dimensions (
 	term_t *terminal, 
 	int lines, 
-	int cols));
+	int cols);
 
 /* tset_fg.c */
-int tset_foreground __PROTO((
+int tset_foreground (
 	term_t *terminal, 
-	int color));
+	int color);
 
 /* tset_modes.c */
-int tset_modes __PROTO((
+int tset_modes (
 	term_t *terminal, 
-	int mode));
+	int mode);
 
 /* tset_start.c */
-int tset_startup_tty __PROTO((
-	term_t *terminal));
+int tset_startup_tty (
+	term_t *terminal);
 
 /* tset_tty.c */
-int tset_tty __PROTO((
+int tset_tty (
 	term_t *terminal, 
 	int flag, 
-	int mode));
+	int mode);
 
 /* tunset_tty.c */
-int tunset_tty __PROTO((
+int tunset_tty (
 	term_t *terminal, 
 	int flag, 
-	int mode));
+	int mode);
 
-#undef __PROTO
 #endif

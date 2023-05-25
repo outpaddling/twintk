@@ -28,9 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-int     tset_modes(terminal,mode)
-term_t  *terminal;
-int     mode;
+int 
+tset_modes (term_t *terminal, int mode)
 
 {
     int     count = 0, fg, bg, save_mode = mode, color;

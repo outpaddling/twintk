@@ -27,9 +27,8 @@
 
 #include "twintk_term.h"
 
-int     tset_background(terminal,color)
-term_t  *terminal;
-int     color;
+int 
+tset_background (term_t *terminal, int color)
 
 {
     if ( TMAX_COLORS(terminal) != -1 )

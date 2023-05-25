@@ -2,9 +2,8 @@
 #include <ctype.h>
 #include "twintk.h"
 
-void    tw_blank_field(win, len)
-win_t   *win;
-int len;
+void 
+tw_blank_field (win_t *win, int len)
 
 {
     int     c, y, x;

@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_home_win(win)
-win_t   *win;
+void 
+tw_home_win (win_t *win)
 
 {
     if ( (win->screen_line == 0) && (win->screen_col == 0) )

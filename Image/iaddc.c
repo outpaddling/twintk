@@ -29,9 +29,8 @@
  
 #include "twintk_image.h"
 
-void    iaddc(image,l,c,ch)
-image_t *image;
-int     l,c,ch;
+void 
+iaddc (image_t *image, int l, int c, int ch)
 
 {
     image->buff[l][c] = ch;

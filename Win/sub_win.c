@@ -1,9 +1,8 @@
 #include <stdlib.h>
 #include "twintk.h"
 
-win_t  *tw_sub_win(parent_win, wlines, wcols, parent_line, parent_col, traits)
-win_t  *parent_win;
-int     wlines, wcols, parent_line, parent_col, traits;
+win_t *
+tw_sub_win (win_t *parent_win, int wlines, int wcols, int parent_line, int parent_col, int traits)
 
 {
     win_t  *win;

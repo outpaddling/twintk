@@ -29,8 +29,8 @@
 #include <stdlib.h>
 #include "twintk_term.h"
 
-int     tpush_tty(terminal)
-term_t  *terminal;
+int 
+tpush_tty (term_t *terminal)
 
 {
     node_t  *temp;

@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void    tw_del_line(win)
-win_t   *win;
+void 
+tw_del_line (win_t *win)
 
 {
     iscroll_forward(&win->image,TW_CUR_LINE(win),TW_LINES(win)-1);

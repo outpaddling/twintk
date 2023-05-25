@@ -1,8 +1,7 @@
 #include "twintk.h"
 
-int     tw_set_foreground(win,color)
-win_t   *win;
-int     color;
+int 
+tw_set_foreground (win_t *win, int color)
 
 {
     if ( TMAX_COLORS(win->terminal) != -1 )

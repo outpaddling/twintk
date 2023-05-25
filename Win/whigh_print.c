@@ -6,10 +6,8 @@
  * a '.' in normal text.
  **************************************************************/
 
-void    tw_high_print(win, fg, bg, hlfg, hlbg, text)
-win_t   *win;
-int     fg,bg,hlfg,hlbg;
-char   *text;
+void 
+tw_high_print (win_t *win, int fg, int bg, int hlfg, int hlbg, char *text)
 
 {
     int     c, ch;

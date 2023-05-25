@@ -27,8 +27,8 @@
 
 #include "twintk_term.h"
 
-int     tinsert_mode(term)
-term_t  *term;
+int 
+tinsert_mode (term_t *term)
 
 {
     return 0;

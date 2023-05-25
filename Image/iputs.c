@@ -29,9 +29,8 @@
  
 #include "twintk_image.h"
 
-void    iputs(image,str)
-image_t *image;
-char    *str;
+void 
+iputs (image_t *image, char *str)
 
 {
     while ( *str )

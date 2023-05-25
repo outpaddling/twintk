@@ -28,9 +28,8 @@
 #include <string.h>
 #include "twintk_image.h"
 
-void    iscroll_forward(image,topline,bottomline)
-image_t *image;
-int    topline,bottomline;
+void 
+iscroll_forward (image_t *image, int topline, int bottomline)
 
 {
     int    l,c;

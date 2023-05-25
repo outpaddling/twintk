@@ -35,9 +35,8 @@
  * Set one or more tty modes using a termios call.
  */
 
-int     tset_tty(terminal,flag,mode)
-term_t  *terminal;
-int     flag,mode;
+int 
+tset_tty (term_t *terminal, int flag, int mode)
 
 {
     switch(flag)

@@ -28,9 +28,8 @@
 #include <stdio.h>
 #include "twintk_image.h"
 
-int     ichange_scroll_region(image,top,bottom)
-image_t *image;
-int    top,bottom;
+int 
+ichange_scroll_region (image_t *image, int top, int bottom)
 
 {
     if ( (top < image->lines) && (bottom < image->lines) )

@@ -1,9 +1,8 @@
 #include <string.h>
 #include "twintk.h"
 
-void    tw_insertc(win,ch)
-win_t  *win;
-int     ch;
+void 
+tw_insertc (win_t *win, int ch)
 
 {
     /* Update screen image */

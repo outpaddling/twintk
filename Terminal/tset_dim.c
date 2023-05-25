@@ -27,9 +27,8 @@
 
 #include "twintk_term.h"
 
-void    tset_dimensions(terminal,lines,cols)
-term_t  *terminal;
-int lines,cols;
+void 
+tset_dimensions (term_t *terminal, int lines, int cols)
 
 {
     terminal->lines = terminal->image.lines = lines;

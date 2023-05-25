@@ -12,12 +12,8 @@ void    highlight_last_char(win_t *win, int submenu)
 }
 
 
-void    tw_highlight_menu_item(win,text,row,no_color,reverse_menu,
-			    fg,bg,hl_fg,hl_bg,main_mode,highlight_mode,lc,rc)
-win_t   *win;
-char    *text;
-int     row, no_color, reverse_menu,
-	fg,bg,hl_fg,hl_bg,main_mode,highlight_mode,lc,rc;
+void 
+tw_highlight_menu_item (win_t *win, char *text, int row, int no_color, int reverse_menu, int fg, int bg, int hl_fg, int hl_bg, int main_mode, int highlight_mode, int lc, int rc)
 
 {
     int     c, ch, submenu;

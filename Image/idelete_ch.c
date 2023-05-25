@@ -28,8 +28,8 @@
 #include <string.h>
 #include "twintk_image.h"
 
-void    idelete_ch(image)
-image_t *image;
+void 
+idelete_ch (image_t *image)
 
 {
     int    line=image->cur_line,col=image->cur_col,

@@ -29,10 +29,8 @@
 #include <ctype.h>
 #include "twintk_term.h"
 
-int     tgetseq(terminal,seq,max_len)
-term_t  *terminal;
-char    seq[];
-size_t  max_len;
+int 
+tgetseq (term_t *terminal, char seq[], size_t max_len)
 
 {
     int     ch, code;

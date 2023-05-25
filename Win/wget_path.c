@@ -169,10 +169,8 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
  * List files matching the file specification and file type
  **************************************************************/
 
-int     list_files(names,pattern,file_type,max_names)
-char    *names[], *pattern;
-int     file_type;
-size_t  max_names;
+int 
+list_files (char *names[], char *pattern, int file_type, size_t max_names)
 
 {
     int     maxlen = 0, len, c;

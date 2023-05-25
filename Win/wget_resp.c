@@ -5,9 +5,8 @@
  * Get a single key stroke response and validate
  ************************************************/
 
-int     tw_get_response(win,valid)
-win_t   *win;
-char    valid[];
+int 
+tw_get_response (win_t *win, char valid[])
 
 {
     int     ch;

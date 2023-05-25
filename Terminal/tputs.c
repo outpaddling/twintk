@@ -30,9 +30,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void    tputs(terminal,str)
-term_t  *terminal;
-char    *str;
+void 
+tputs (term_t *terminal, char *str)
 
 {
     while ( *str != '\0' )

@@ -36,8 +36,8 @@
  * so put return earlier in code below.
  */
  
-void    init_keymap(terminal)
-term_t   *terminal;
+void 
+init_keymap (term_t *terminal)
 
 {
     /* Add Terminfo-defined keys or common defaults for things
@@ -326,8 +326,8 @@ term_t   *terminal;
  *  after running vtxxx_keys().
  ***************************************************************************/
 
-void    vtxxx_keys(term)
-term_t  *term;
+void 
+vtxxx_keys (term_t *term)
 
 {
     /* If DEL is not defined as the delete char, use it for backspace.

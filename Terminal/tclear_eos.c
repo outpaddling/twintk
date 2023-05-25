@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void    tclear_eos(terminal)
-term_t  *terminal;
+void 
+tclear_eos (term_t *terminal)
 
 {   int    l,start_line,start_col;
     

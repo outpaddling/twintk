@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-void        tw_shadow(win)
-win_t       *win;
+void 
+tw_shadow (win_t *win)
 
 {
     if ( !TW_HAS_SHADOW(win) )
@@ -22,8 +22,8 @@ win_t       *win;
 
 /* Make shadow border */
 
-void    tw_checker_shadow(win)
-win_t   *win;
+void 
+tw_checker_shadow (win_t *win)
 
 {
     win_t   *shadow_win = win->parent_win;
@@ -93,8 +93,8 @@ win_t   *win;
 
 /* Make shadow border */
 
-void    tw_blank_shadow(win)
-win_t   *win;
+void 
+tw_blank_shadow (win_t *win)
 
 {
     win_t   *shadow_win = win->parent_win;
@@ -133,8 +133,8 @@ win_t   *win;
 }
 
 
-void    tw_dim_shadow(win)
-win_t   *win;
+void 
+tw_dim_shadow (win_t *win)
 
 {
     win_t   *shadow_win = win->parent_win;
@@ -180,9 +180,8 @@ win_t   *win;
 }
 
 
-void    tw_match_term_ch(win,line,col)
-win_t   *win;
-int    line,col;
+void 
+tw_match_term_ch (win_t *win, int line, int col)
 
 {
     line += TW_SCREEN_LINE(win);

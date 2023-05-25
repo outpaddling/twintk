@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include "twintk_image.h"
 
-void    idump(image)
-image_t *image;
+void 
+idump (image_t *image)
 
 {
     fprintf(stderr,"buff=%p\n,attr=%p\n",image->buff,image->attr);

@@ -1,8 +1,7 @@
 #include "twintk.h"
 
-int     tw_mouse_in_win(win,event_win,event)
-win_t   *win,*event_win;
-event_t *event;
+int 
+tw_mouse_in_win (win_t *win, win_t *event_win, event_t *event)
 
 {
     int     term_line = event->mouse_line + TW_SCREEN_LINE(event_win),

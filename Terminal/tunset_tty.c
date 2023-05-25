@@ -31,9 +31,8 @@
 #include <stdlib.h>
 #include "twintk_term.h"
 
-int     tunset_tty(terminal,flag,mode)
-term_t  *terminal;
-int     flag,mode;
+int 
+tunset_tty (term_t *terminal, int flag, int mode)
 
 {
     switch(flag)

@@ -30,8 +30,8 @@
 #include <stdio.h>
 #include "twintk_term.h"
 
-void    tdelete_line(terminal)
-term_t  *terminal;
+void 
+tdelete_line (term_t *terminal)
 
 {
     int     curline = TCUR_LINE(terminal),

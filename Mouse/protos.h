@@ -25,30 +25,20 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 */
 
-#ifndef __PROTO
-#if __STDC__ || defined(__cplusplus)
-#define __PROTO(s) s
-#else
-#define __PROTO(s) ()
-#endif
-#endif
-
-
 /* mouselib.c */
-int open_mouse __PROTO((
+int open_mouse (
 	mouse_t *mouse, 
 	char *device, 
-	int type));
-void tclose_mouse __PROTO((
-	mouse_t *mouse));
-int tget_raw_mouse_packet __PROTO((
+	int type);
+void tclose_mouse (
+	mouse_t *mouse);
+int tget_raw_mouse_packet (
 	mouse_t *mouse, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* tmouse.c */
-int main __PROTO((
+int main (
 	int argc, 
-	char *argv[]));
-void orphan __PROTO((void));
+	char *argv[]);
+void orphan (void);
 
-#undef __PROTO

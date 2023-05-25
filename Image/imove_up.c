@@ -29,8 +29,8 @@
  
 #include "twintk_image.h"
 
-int     imove_up(image)
-image_t *image;
+int 
+imove_up (image_t *image)
 
 {
     if ( ICUR_LINE(image) > 0 )

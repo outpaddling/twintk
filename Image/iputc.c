@@ -27,9 +27,8 @@
 
 #include "twintk_image.h"
 
-void    iputc(image,ch)
-image_t *image;
-int     ch;
+void 
+iputc (image_t *image, int ch)
 
 {
     int    line,col;

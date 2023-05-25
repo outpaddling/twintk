@@ -1,7 +1,7 @@
 #include "twintk.h"
 	    
-void    tw_insert_line(win)
-win_t   *win;
+void 
+tw_insert_line (win_t *win)
 
 {
     int     line,col;

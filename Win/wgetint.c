@@ -4,10 +4,8 @@
 #include <xtend/string.h>   // ltostrn()
 #include "twintk.h"
 
-short   tw_get_short(win, incoming, min, max, base, event)
-win_t   *win;
-int     incoming, min, max, base;
-event_t *event;
+short 
+tw_get_short (win_t *win, int incoming, int min, int max, int base, event_t *event)
 
 {
     return (short)
@@ -15,10 +13,8 @@ event_t *event;
 }
 
 
-int     tw_get_int(win, incoming, min, max, base, event)
-win_t   *win;
-int     incoming, min, max, base;
-event_t *event;
+int 
+tw_get_int (win_t *win, int incoming, int min, int max, int base, event_t *event)
 
 {
     return (int)
@@ -204,8 +200,8 @@ void    tw_get_int_string(win_t *win, int maxlen, int base, event_t *event, char
 }
 
 
-int     digit(ch,base)
-int     ch,base;
+int 
+digit (int ch, int base)
 
 {
     int     d;

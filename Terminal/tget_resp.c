@@ -27,9 +27,8 @@
 
 #include "twintk_term.h"
 
-int     tget_resp(term,valid)
-term_t  *term;
-char    *valid;
+int 
+tget_resp (term_t *term, char *valid)
 
 {
     return 0;

@@ -1,7 +1,7 @@
 #include "twintk.h"
 
-int     tw_move_right(win)
-win_t   *win;
+int 
+tw_move_right (win_t *win)
 
 {
     int     stat;

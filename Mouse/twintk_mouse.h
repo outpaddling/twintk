@@ -75,52 +75,43 @@ typedef struct
     int     type;
 }   mouse_t;
 
-#ifndef __PROTO
-#if __STDC__ || defined(__cplusplus)
-#define __PROTO(s) s
-#else
-#define __PROTO(s) ()
-#endif
-#endif
-
 
 /* atibus.c */
-int get_ati_packet __PROTO((
+int get_ati_packet (
 	int mouse_fd, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* microsoft.c */
-int get_microsoft_packet __PROTO((
+int get_microsoft_packet (
 	int mouse_fd, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* mouselib.c */
-int open_mouse __PROTO((
+int open_mouse (
 	mouse_t *mouse, 
 	char *device, 
-	int type));
-void close_mouse __PROTO((
-	mouse_t *mouse));
-int get_raw_mouse_packet __PROTO((
+	int type);
+void close_mouse (
+	mouse_t *mouse);
+int get_raw_mouse_packet (
 	mouse_t *mouse, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* mousesys.c */
-int get_mouse_systems_packet __PROTO((
+int get_mouse_systems_packet (
 	int mouse_fd, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* ps2.c */
-int get_ps2_packet __PROTO((
+int get_ps2_packet (
 	int mouse_fd, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* scobus.c */
-int get_scobus_packet __PROTO((
+int get_scobus_packet (
 	int mouse_fd, 
-	packet_t *packet));
+	packet_t *packet);
 
 /* tmouse.c */
-void orphan __PROTO((void));
+void orphan (void);
 
-#undef __PROTO

@@ -3,8 +3,8 @@
 #include <unistd.h>
 #include "twintk.h"
 
-void    tw_clear_win(win)
-win_t  *win;
+void 
+tw_clear_win (win_t *win)
 
 {
     int     line;

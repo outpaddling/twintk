@@ -27,8 +27,8 @@
 
 #include "twintk_image.h"
 
-void    inext_line(image)
-image_t *image;
+void 
+inext_line (image_t *image)
 
 {
     if ( image->cur_line == image->scroll_bottom )

@@ -9,12 +9,8 @@
 #define MAX_DISPLAYED(w,ml) ( MAX((TW_COLS(w) - 4) / (ml + 1),1) *\
 			    (TW_LINES(w) - 2))
 
-int             tw_get_menu(win, string, list, str_max, event)
-win_t          *win;
-char           *string;
-char           *list[];
-int        str_max;
-event_t        *event;
+int 
+tw_get_menu (win_t *win, char *string, char *list[], int str_max, event_t *event)
 
 {
     int             ch,
@@ -213,10 +209,8 @@ event_t        *event;
 }
 
 
-void    display_strings(win,list,first_str)
-win_t   *win;
-char    *list[];
-int     first_str;
+void 
+display_strings (win_t *win, char *list[], int first_str)
 
 {
     int     c, c2, total_strings, maxlen = 0, len;

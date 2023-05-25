@@ -1,8 +1,7 @@
 #include "twintk.h"
 
-void    tw_redraw(win, topline, leftcol, bottomline, rightcol)
-win_t  *win;
-int     topline, leftcol, bottomline, rightcol;
+void 
+tw_redraw (win_t *win, int topline, int leftcol, int bottomline, int rightcol)
 
 {
     int     line, start_line, start_col, auto_scroll = TW_AUTO_SCROLL(win);

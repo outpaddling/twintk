@@ -28,8 +28,8 @@
 #include <stdlib.h>
 #include "twintk_term.h"
 
-void    del_term(term)
-term_t  **term;
+void 
+del_term (term_t **term)
 
 {
     term_t  *t = *term;

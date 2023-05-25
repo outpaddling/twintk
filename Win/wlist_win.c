@@ -6,9 +6,8 @@
  * for offset from right or bottom.  ( Like tw_new_win and tw_sub_win )
  */
  
-void    tw_list_win(win,parent_line,parent_col)
-win_t   *win;
-int     parent_line,parent_col;
+void 
+tw_list_win (win_t *win, int parent_line, int parent_col)
 
 {
     winlist_t   *temp;

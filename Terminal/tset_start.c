@@ -29,8 +29,8 @@
  
 #include "twintk_term.h"
 
-int     tset_startup_tty(terminal)
-term_t  *terminal;
+int 
+tset_startup_tty (term_t *terminal)
 
 {
     int     stat;

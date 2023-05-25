@@ -2,11 +2,8 @@
 #include <ctype.h>
 #include "twintk.h"
 
-int     tw_response_win(term,line,col,message,buttons,extra_flags,border)
-term_t  *term;
-int     line,col,extra_flags;
-char    *message[], *buttons[];
-border_t    *border;
+int 
+tw_response_win (term_t *term, int line, int col, char *message[], char *buttons[], int extra_flags, border_t *border)
 
 {
     win_t   *win;
