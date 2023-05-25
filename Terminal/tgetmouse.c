@@ -28,9 +28,7 @@
 #include <unistd.h>
 #include "twintk_term.h"
 
-int     tget_mouse_packet(terminal,packet)
-term_t  *terminal;
-packet_t    *packet;
+int     tget_mouse_packet(term_t *terminal, packet_t *packet)
 
 {
     char    buff[9];
