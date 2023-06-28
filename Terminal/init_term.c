@@ -212,11 +212,11 @@ init_acsmap (term_t *terminal)
 	/* DEC bug: ACS map stored as adjacent sets instead of adjacent characters */
 	for (p=terminal->acs_chars, p2=terminal->char_padding; *p != '\0'; ++p, ++p2)
 	{
-	    terminal->acs_map[(int)*p] = *p2;
+	    terminal->acs_map[*p] = *p2;
 	}
 #else   /* not osf1 */
 	for (p=(unsigned char *)terminal->acs_chars; *p != '\0'; p+=2)
-	    terminal->acs_map[(int)*p] = *(p+1);
+	    terminal->acs_map[*p] = *(p+1);
 #endif  /* osf1 */
     }
 }
