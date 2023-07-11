@@ -58,13 +58,19 @@ init_term (FILE *fpin, FILE *fpout, FILE *fperr, char *termtype, unsigned flags)
 	exit(EX_UNAVAILABLE);
     }
     
-    /* Load terminfo data */
+    /*
+     *  Get terminal type from env if not provided as an argument.
+     *  There does not seem to be a terminfo entry for truecolor, so
+     *  ignore it if present.
+     */
+    
     if ( termtype == NULL )
     {
 	termtype = getenv("TWINTERM");
 	if ( (termtype == NULL) || strblank(termtype))
 	    termtype = getenv("COLORTERM");
-	if ( (termtype == NULL) || strblank(termtype) )
+	if ( (termtype == NULL) || strblank(termtype) || \
+	     (strcmp(termtype, "truecolor") == 0) )
 	    termtype = getenv("TERM");
 	if ( (termtype == NULL) || strblank(termtype) )
 	{
@@ -74,6 +80,7 @@ init_term (FILE *fpin, FILE *fpout, FILE *fperr, char *termtype, unsigned flags)
     }
     strlcpy(terminal->term_type,termtype,MAX_TERM_NAME);
     
+    /* Load terminfo data */
     error = load_tinfo(termtype,terminal);
     switch(error)
     {
