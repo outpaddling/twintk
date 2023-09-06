@@ -33,7 +33,7 @@
 #include <sys/types.h>
 #include <sys/ioctl.h>
 #include <sysexits.h>
-#include <xtend/string.h>   // strblank()
+#include <xtend/string.h>   // xt_strblank()
 #include "twintk_term.h"
 
 term_t *
@@ -67,12 +67,12 @@ init_term (FILE *fpin, FILE *fpout, FILE *fperr, char *termtype, unsigned flags)
     if ( termtype == NULL )
     {
 	termtype = getenv("TWINTERM");
-	if ( (termtype == NULL) || strblank(termtype))
+	if ( (termtype == NULL) || xt_strblank(termtype))
 	    termtype = getenv("COLORTERM");
-	if ( (termtype == NULL) || strblank(termtype) || \
+	if ( (termtype == NULL) || xt_strblank(termtype) || \
 	     (strcmp(termtype, "truecolor") == 0) )
 	    termtype = getenv("TERM");
-	if ( (termtype == NULL) || strblank(termtype) )
+	if ( (termtype == NULL) || xt_strblank(termtype) )
 	{
 	    fprintf(stderr,"init_term(): getenv(\"TERM\") failed.\n");
 	    return(NULL);

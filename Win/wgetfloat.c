@@ -22,8 +22,8 @@ tw_get_double (win_t *win, double incoming, double min, double max, event_t *eve
     
     /* Find maximum length of an input value */
     maxlen = 19;
-    /*MAX(strlen(ltostrn(temp,max,base,19)),
-		strlen(ltostrn(temp,min,base,19)));*/
+    /*MAX(strlen(xt_ltostrn(temp,max,base,19)),
+		strlen(xt_ltostrn(temp,min,base,19)));*/
     
     /* Display incoming string */
     snprintf(temp,19,"%f",incoming);

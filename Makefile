@@ -71,7 +71,7 @@ PRINTF      ?= printf
 
 CFLAGS      ?= -Wall -O -g
 CFLAGS      += -Wno-char-subscripts
-INCLUDES    += -IImage -ITerminal -IWin -IMouse -isystem ${LOCALBASE}/include
+INCLUDES    += -IImage -ITerminal -IWin -IMouse -isystem ${PREFIX}/include -isystem ${LOCALBASE}/include
 CFLAGS      += ${INCLUDES} -DPREFIX="\"${PREFIX}\""
 
 all:    ${SLIB}

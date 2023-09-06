@@ -235,7 +235,7 @@ load_tinfo (char *term_name, term_t *terminal)
 
 	printf("%3d=%3d ",i,offset[i]);
 	*temp = '\0';
-	strviscpy((unsigned char *)temp, (unsigned char *)strings[i], 1024);
+	xt_strviscpy((unsigned char *)temp, (unsigned char *)strings[i], 1024);
 	puts(temp);
     }
 #endif

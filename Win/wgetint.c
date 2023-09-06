@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <xtend/string.h>   // ltostrn()
+#include <xtend/string.h>   // xt_ltostrn()
 #include "twintk.h"
 
 short 
@@ -50,11 +50,11 @@ long    tw_get_long(win_t *win, long incoming, long min, long max, int base, eve
     long    outgoing;
     
     /* Find maximum length of an input value */
-    maxlen = MAX(strlen(ltostrn(temp,max,base,19)),
-		 strlen(ltostrn(temp,min,base,19)));
+    maxlen = MAX(strlen(xt_ltostrn(temp,max,base,19)),
+		 strlen(xt_ltostrn(temp,min,base,19)));
     
     /* Display incoming string */
-    ltostrn(temp,incoming,base,19);
+    xt_ltostrn(temp,incoming,base,19);
     
     tw_get_int_string(win, maxlen, base, event, temp);
 
@@ -76,11 +76,11 @@ unsigned long   tw_get_ulong(win_t *win, unsigned long incoming, unsigned long m
     long    outgoing;
     
     /* Find maximum length of an input value */
-    maxlen = MAX(strlen(ltostrn(temp,max,base,19)),
-		 strlen(ltostrn(temp,min,base,19)));
+    maxlen = MAX(strlen(xt_ltostrn(temp,max,base,19)),
+		 strlen(xt_ltostrn(temp,min,base,19)));
     
     /* Display incoming string */
-    ltostrn(temp,incoming,base,19);
+    xt_ltostrn(temp,incoming,base,19);
     
     tw_get_int_string(win, maxlen, base, event, temp);
 

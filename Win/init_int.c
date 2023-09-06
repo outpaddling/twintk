@@ -21,7 +21,7 @@ void    tw_init_int(tw_panel_t *panel, int line, int col, int min, int max,
 
     field->data_type = TWC_INT;
     field->data.int_ptr = int_ptr;
-    field->field_len = MAX(digits((long)max,10),digits((long)min,10));
+    field->field_len = MAX(xt_digits((long)max,10),xt_digits((long)min,10));
 }
 
 
@@ -45,6 +45,6 @@ void    tw_init_uint(tw_panel_t *panel, int line, int col,
     field->data_type = TWC_UINT;
     field->data.uint_ptr = uint_ptr;
     /* FIXME: Need unsigned digits */
-    field->field_len = MAX(digits(max,10),digits(min,10));
+    field->field_len = MAX(xt_digits(max,10),xt_digits(min,10));
 }
 

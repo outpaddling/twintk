@@ -158,7 +158,7 @@ int     tw_get_pathname(win_t *win, char *file_name, char *file_spec)
     if ( (*temp_name == '\0') || (TW_EXIT_KEY(status) == TWC_INPUT_CANCEL) )
 	chdir(old_dir);
     else
-	strshellcpy(file_name,temp_name,PATH_MAX);
+	xt_strshellcpy(file_name,temp_name,PATH_MAX);
     tw_del_win(&dirs_win);
     tw_del_win(&names_win);
     return status;
@@ -209,7 +209,7 @@ list_files (char *names[], char *pattern, int file_type, size_t max_names)
 			maxlen = len;
 		}
 	}
-	qsort(names,p-names,sizeof(char *),(int (*)())strptrcmp);
+	qsort(names,p-names,sizeof(char *),(int (*)())xt_strptrcmp);
 	*p = NULL;
 	closedir(dp);
     }

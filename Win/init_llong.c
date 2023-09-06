@@ -21,6 +21,6 @@ void    tw_init_llong(tw_panel_t *panel, int line, int col, long long min,
     field->help = help;
     field->data.llong_ptr = llong_ptr;
     /* FIXME: need digits that takes long long */
-    field->field_len = MAX(digits(max,10),digits(min,10));
+    field->field_len = MAX(xt_digits(max,10),xt_digits(min,10));
 }
 

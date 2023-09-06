@@ -28,26 +28,26 @@ tw_print_current (win_t *win, tw_field_t *fields, int nfields)
 		break;
 	    case TWC_SHORT:
 	    case TWC_INT:
-		d = MAX(digits(fields[c].int_max, 10),
-			     digits(fields[c].int_min, 10));
+		d = MAX(xt_digits(fields[c].int_max, 10),
+			     xt_digits(fields[c].int_min, 10));
 		tw_blank_field(win, d);
 		tw_printf(win, "%d", *fields[c].data.int_ptr);
 		break;
 	    case TWC_UINT:
-		d = MAX(digits(fields[c].uint_max,10),
-			     digits(fields[c].uint_min,10));
+		d = MAX(xt_digits(fields[c].uint_max,10),
+			     xt_digits(fields[c].uint_min,10));
 		tw_blank_field(win, d);
 		tw_printf(win, "%u", *fields[c].data.uint_ptr);
 		break;
 	    case TWC_LONG:
-		d = MAX(digits(fields[c].long_max,10),
-			     digits(fields[c].long_min,10));
+		d = MAX(xt_digits(fields[c].long_max,10),
+			     xt_digits(fields[c].long_min,10));
 		tw_blank_field(win, d);
 		tw_printf(win, "%ld", *fields[c].data.long_ptr);
 		break;
 	    case TWC_DOUBLE:
-		d = MAX(digits(fields[c].double_max,10),
-			     digits(fields[c].double_min,10));
+		d = MAX(xt_digits(fields[c].double_max,10),
+			     xt_digits(fields[c].double_min,10));
 		tw_blank_field(win, d);
 		tw_printf(win, "%f", *fields[c].data.double_ptr);
 		break;
