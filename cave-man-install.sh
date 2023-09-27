@@ -28,8 +28,8 @@ case $(uname) in
 
 esac
 
-# NetBSD make won't install objs into subdirectory
-if [ $(uname) = NetBSD ]; then
+# OpenBSD and NetBSD make won't install objs into subdirectory
+if [ $(uname) = OpenBSD ] || [ $(uname) = NetBSD ]; then
     make=gmake
 else
     make=make
