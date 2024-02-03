@@ -29,7 +29,7 @@ case $(uname) in
 esac
 
 # OpenBSD and NetBSD make won't install objs into subdirectory
-if [ $(uname) = OpenBSD ] || [ $(uname) = NetBSD ]; then
+if [ $(uname) = OpenBSD ] || [ $(uname) = NetBSD ] || [ $(uname) = DragonFly ]; then
     make=gmake
 else
     make=make
