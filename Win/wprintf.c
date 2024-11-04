@@ -16,7 +16,7 @@ const char    *format;
     int     numchars;
     
     va_start(list,format);
-    numchars = vsprintf(temp,format,list);
+    numchars = vsnprintf(temp,1024,format,list);
     tw_puts(win,temp);
     return(numchars);
 }

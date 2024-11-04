@@ -45,7 +45,7 @@ char    *format;
     int     stat;
     
     va_start(arg,format);
-    stat = vsprintf(temp,format,arg);
+    stat = vsnprintf(temp,1024,format,arg);
     tputs(terminal,temp);
     return(stat);
 }

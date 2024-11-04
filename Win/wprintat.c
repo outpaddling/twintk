@@ -18,7 +18,7 @@ char    *format;
     if (tw_move_to(win,line,col) == SUCCESS)
     {
 	va_start(list,format);
-	numchars = vsprintf(temp,format,list);
+	numchars = vsnprintf(temp,1024,format,list);
 	tw_puts(win,temp);
 	return(numchars);
     }

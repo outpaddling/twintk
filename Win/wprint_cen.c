@@ -16,7 +16,7 @@ char   *format;
     char    temp[1024] = "";
 
     va_start(list, format);
-    vsprintf(temp, format, list);
+    vsnprintf(temp, 1024, format, list);
     tw_move_to(win,line,TW_CENTER_STRING_COL(win,temp));
     tw_puts(win, temp);
     va_end(list);
