@@ -11,8 +11,11 @@
 #   2021-07-12  Jason Bacon Begin
 ##########################################################################
 
-# Default to ../local if LOCALBASE is not set
-: ${LOCALBASE:=../local}
+# Default to ../local if PREFIX is not set
+: ${PREFIX:=../local}
+
+PREFIX=$(realpath $PREFIX)
+export PREFIX
 
 # OS-dependent tricks
 # Set rpath to avoid picking up libs installed by package managers in
@@ -22,7 +25,7 @@ case $(uname) in
     if [ -z "$CFLAGS" ]; then
 	export CFLAGS="-Wall -g -O"
     fi
-    LIBDIR=$(realpath $LOCALBASE/lib)
+    LIBDIR=$(realpath $PREFIX/lib)
     export LDFLAGS="-L. -L$LIBDIR -Wl,-rpath,$LIBDIR:/usr/lib:/lib"
     ;;
 
